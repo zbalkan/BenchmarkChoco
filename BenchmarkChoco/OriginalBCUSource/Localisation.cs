@@ -67,7 +67,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Enums_YesNoAsk_Ask", resourceCulture);
+                return "Enums_YesNoAsk_Ask";
             }
         }
 
@@ -78,7 +78,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Error_SeparateArgsFromCommand_Empty", resourceCulture);
+                return "Error_SeparateArgsFromCommand_Empty";
             }
         }
 
@@ -89,7 +89,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Error_SeparateArgsFromCommand_MissingQuotationMark", resourceCulture);
+                return "Error_SeparateArgsFromCommand_MissingQuotationMark";
             }
         }
 
@@ -100,7 +100,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Error_SeparateArgsFromCommand_NoDot", resourceCulture);
+                return "Error_SeparateArgsFromCommand_NoDot";
             }
         }
 
@@ -111,7 +111,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Attributes", resourceCulture);
+                return "FileInfo_Attributes";
             }
         }
 
@@ -122,7 +122,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Comments", resourceCulture);
+                return "FileInfo_Comments";
             }
         }
 
@@ -133,7 +133,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_CompanyName", resourceCulture);
+                return "FileInfo_CompanyName";
             }
         }
 
@@ -144,7 +144,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_CreationTime", resourceCulture);
+                return "FileInfo_CreationTime";
             }
         }
 
@@ -155,7 +155,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Directory", resourceCulture);
+                return "FileInfo_Directory";
             }
         }
 
@@ -166,7 +166,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Exists", resourceCulture);
+                return "FileInfo_Exists";
             }
         }
 
@@ -177,7 +177,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_FileDescription", resourceCulture);
+                return "FileInfo_FileDescription";
             }
         }
 
@@ -188,7 +188,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_FileName", resourceCulture);
+                return "FileInfo_FileName";
             }
         }
 
@@ -199,7 +199,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_FileVersion", resourceCulture);
+                return "FileInfo_FileVersion";
             }
         }
 
@@ -210,7 +210,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_FullName", resourceCulture);
+                return "FileInfo_FullName";
             }
         }
 
@@ -221,7 +221,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_InternalName", resourceCulture);
+                return "FileInfo_InternalName";
             }
         }
 
@@ -232,7 +232,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_IsReadOnly", resourceCulture);
+                return "FileInfo_IsReadOnly";
             }
         }
 
@@ -243,7 +243,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Language", resourceCulture);
+                return "FileInfo_Language";
             }
         }
 
@@ -254,7 +254,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_LastAccessTime", resourceCulture);
+                return "FileInfo_LastAccessTime";
             }
         }
 
@@ -265,7 +265,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_LastWriteTime", resourceCulture);
+                return "FileInfo_LastWriteTime";
             }
         }
 
@@ -276,7 +276,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_LegalCopyright", resourceCulture);
+                return "FileInfo_LegalCopyright";
             }
         }
 
@@ -287,7 +287,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_LegalTrademarks", resourceCulture);
+                return "FileInfo_LegalTrademarks";
             }
         }
 
@@ -298,7 +298,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_OriginalFilename", resourceCulture);
+                return "FileInfo_OriginalFilename";
             }
         }
 
@@ -309,7 +309,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_ProductName", resourceCulture);
+                return "FileInfo_ProductName";
             }
         }
 
@@ -320,7 +320,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_ProductVersion", resourceCulture);
+                return "FileInfo_ProductVersion";
             }
         }
 
@@ -331,7 +331,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileInfo_Size", resourceCulture);
+                return "FileInfo_Size";
             }
         }
 
@@ -342,7 +342,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_GB_Long", resourceCulture);
+                return "FileSize_GB_Long";
             }
         }
 
@@ -353,7 +353,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_GB_Short", resourceCulture);
+                return "FileSize_GB_Short";
             }
         }
 
@@ -364,7 +364,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_KB_Long", resourceCulture);
+                return "FileSize_KB_Long";
             }
         }
 
@@ -375,7 +375,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_KB_Short", resourceCulture);
+                return "FileSize_KB_Short";
             }
         }
 
@@ -386,7 +386,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_MB_Long", resourceCulture);
+                return "FileSize_MB_Long";
             }
         }
 
@@ -397,7 +397,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_MB_Short", resourceCulture);
+                return "FileSize_MB_Short";
             }
         }
 
@@ -408,7 +408,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_TB_Long", resourceCulture);
+                return "FileSize_TB_Long";
             }
         }
 
@@ -419,7 +419,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FileSize_TB_Short", resourceCulture);
+                return "FileSize_TB_Short";
             }
         }
 
@@ -430,7 +430,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("No", resourceCulture);
+                return "No";
             }
         }
 
@@ -445,7 +445,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_GenericError_Details", resourceCulture);
+                return "PremadeDialogs_GenericError_Details";
             }
         }
 
@@ -456,7 +456,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_GenericError_Heading", resourceCulture);
+                return "PremadeDialogs_GenericError_Heading";
             }
         }
 
@@ -467,7 +467,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_GenericError_InnerExceptionTitle", resourceCulture);
+                return "PremadeDialogs_GenericError_InnerExceptionTitle";
             }
         }
 
@@ -478,7 +478,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_GenericError_Title", resourceCulture);
+                return "PremadeDialogs_GenericError_Title";
             }
         }
 
@@ -489,7 +489,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_GenericErrorExtendedSafe_Heading", resourceCulture);
+                return "PremadeDialogs_GenericErrorExtendedSafe_Heading";
             }
         }
 
@@ -500,7 +500,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_KillRunningProcessesQuestion_Details", resourceCulture);
+                return "PremadeDialogs_KillRunningProcessesQuestion_Details";
             }
         }
 
@@ -511,7 +511,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_KillRunningProcessesQuestion_Message", resourceCulture);
+                return "PremadeDialogs_KillRunningProcessesQuestion_Message";
             }
         }
 
@@ -522,7 +522,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PremadeDialogs_KillRunningProcessesQuestion_Title", resourceCulture);
+                return "PremadeDialogs_KillRunningProcessesQuestion_Title";
             }
         }
 
@@ -533,7 +533,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryTools_AddRegToRegistry_FileNotExist", resourceCulture);
+                return "RegistryTools_AddRegToRegistry_FileNotExist";
             }
         }
 
@@ -544,7 +544,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryTools_RemoveRegistryKey_PathEmptyNull", resourceCulture);
+                return "RegistryTools_RemoveRegistryKey_PathEmptyNull";
             }
         }
 
@@ -555,7 +555,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryTools_RemoveRegistryKey_PointsAtRoot", resourceCulture);
+                return "RegistryTools_RemoveRegistryKey_PointsAtRoot";
             }
         }
 
@@ -566,7 +566,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryTools_RemoveRegistryKey_RemoveDefault", resourceCulture);
+                return "RegistryTools_RemoveRegistryKey_RemoveDefault";
             }
         }
 
@@ -577,7 +577,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Days_Since", resourceCulture);
+                return "ToFuzzyTimeSinceString_Days_Since";
             }
         }
 
@@ -588,7 +588,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Days_Single", resourceCulture);
+                return "ToFuzzyTimeSinceString_Days_Single";
             }
         }
 
@@ -599,7 +599,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Hours_Since", resourceCulture);
+                return "ToFuzzyTimeSinceString_Hours_Since";
             }
         }
 
@@ -610,7 +610,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Hours_Single", resourceCulture);
+                return "ToFuzzyTimeSinceString_Hours_Single";
             }
         }
 
@@ -621,7 +621,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_JustNow", resourceCulture);
+                return "ToFuzzyTimeSinceString_JustNow";
             }
         }
 
@@ -632,7 +632,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Minutes_Since", resourceCulture);
+                return "ToFuzzyTimeSinceString_Minutes_Since";
             }
         }
 
@@ -643,7 +643,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Minutes_Single", resourceCulture);
+                return "ToFuzzyTimeSinceString_Minutes_Single";
             }
         }
 
@@ -654,7 +654,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Months_Since", resourceCulture);
+                return "ToFuzzyTimeSinceString_Months_Since";
             }
         }
 
@@ -665,7 +665,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Months_Single", resourceCulture);
+                return "ToFuzzyTimeSinceString_Months_Single";
             }
         }
 
@@ -676,7 +676,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Years_Since", resourceCulture);
+                return "ToFuzzyTimeSinceString_Years_Since";
             }
         }
 
@@ -687,7 +687,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ToFuzzyTimeSinceString_Years_Single", resourceCulture);
+                return "ToFuzzyTimeSinceString_Years_Single";
             }
         }
 
@@ -698,7 +698,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Yes", resourceCulture);
+                return "Yes";
             }
         }
 
@@ -709,7 +709,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Bad", resourceCulture);
+                return "Confidence_Bad";
             }
         }
 
@@ -720,7 +720,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Good", resourceCulture);
+                return "Confidence_Good";
             }
         }
 
@@ -731,7 +731,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_EmptyFolder", resourceCulture);
+                return "Confidence_PF_EmptyFolder";
             }
         }
 
@@ -742,7 +742,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_ExecsPresent", resourceCulture);
+                return "Confidence_PF_ExecsPresent";
             }
         }
 
@@ -753,7 +753,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_FilesPresent", resourceCulture);
+                return "Confidence_PF_FilesPresent";
             }
         }
 
@@ -764,7 +764,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_ManyFilesPresent", resourceCulture);
+                return "Confidence_PF_ManyFilesPresent";
             }
         }
 
@@ -775,7 +775,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_NameIsUsed", resourceCulture);
+                return "Confidence_PF_NameIsUsed";
             }
         }
 
@@ -786,7 +786,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_NoSubdirs", resourceCulture);
+                return "Confidence_PF_NoSubdirs";
             }
         }
 
@@ -797,7 +797,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_PF_PublisherIsUsed", resourceCulture);
+                return "Confidence_PF_PublisherIsUsed";
             }
         }
 
@@ -808,7 +808,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Questionable", resourceCulture);
+                return "Confidence_Questionable";
             }
         }
 
@@ -819,7 +819,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Startup_IsRunOnce", resourceCulture);
+                return "Confidence_Startup_IsRunOnce";
             }
         }
 
@@ -830,7 +830,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Startup_StartupMatched", resourceCulture);
+                return "Confidence_Startup_StartupMatched";
             }
         }
 
@@ -841,7 +841,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_Unknown", resourceCulture);
+                return "Confidence_Unknown";
             }
         }
 
@@ -852,7 +852,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_UsedBySimilarNamedApp", resourceCulture);
+                return "Confidence_UsedBySimilarNamedApp";
             }
         }
 
@@ -863,7 +863,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Confidence_VeryGood", resourceCulture);
+                return "Confidence_VeryGood";
             }
         }
 
@@ -874,7 +874,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_AllSubdirsMatched", resourceCulture);
+                return "ConfidencePart_AllSubdirsMatched";
             }
         }
 
@@ -885,7 +885,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_CompanyNameDidNotMatch", resourceCulture);
+                return "ConfidencePart_CompanyNameDidNotMatch";
             }
         }
 
@@ -896,7 +896,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_CompanyNameMatch", resourceCulture);
+                return "ConfidencePart_CompanyNameMatch";
             }
         }
 
@@ -907,7 +907,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_DirectoryStillUsed", resourceCulture);
+                return "ConfidencePart_DirectoryStillUsed";
             }
         }
 
@@ -918,7 +918,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_ExplicitConnection", resourceCulture);
+                return "ConfidencePart_ExplicitConnection";
             }
         }
 
@@ -929,7 +929,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_IsStoreApp", resourceCulture);
+                return "ConfidencePart_IsStoreApp";
             }
         }
 
@@ -940,7 +940,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_IsUninstallerRegistryKey", resourceCulture);
+                return "ConfidencePart_IsUninstallerRegistryKey";
             }
         }
 
@@ -951,7 +951,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_ItemNameEqualsCompanyName", resourceCulture);
+                return "ConfidencePart_ItemNameEqualsCompanyName";
             }
         }
 
@@ -962,7 +962,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_ProductNameDodgyMatch", resourceCulture);
+                return "ConfidencePart_ProductNameDodgyMatch";
             }
         }
 
@@ -973,7 +973,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_ProductNamePerfectMatch", resourceCulture);
+                return "ConfidencePart_ProductNamePerfectMatch";
             }
         }
 
@@ -984,7 +984,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ConfidencePart_QuestionableDirectoryName", resourceCulture);
+                return "ConfidencePart_QuestionableDirectoryName";
             }
         }
 
@@ -995,7 +995,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("DisplayIcon", resourceCulture);
+                return "DisplayIcon";
             }
         }
 
@@ -1006,7 +1006,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("DisplayName", resourceCulture);
+                return "DisplayName";
             }
         }
 
@@ -1017,7 +1017,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("DisplayNameTrimmed", resourceCulture);
+                return "DisplayNameTrimmed";
             }
         }
 
@@ -1028,7 +1028,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("DisplayVersion", resourceCulture);
+                return "DisplayVersion";
             }
         }
 
@@ -1039,7 +1039,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Error_InvalidPath", resourceCulture);
+                return "Error_InvalidPath";
             }
         }
 
@@ -1050,7 +1050,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Error_InvalidRegKeys", resourceCulture);
+                return "Error_InvalidRegKeys";
             }
         }
 
@@ -1061,7 +1061,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("EstimatedSize", resourceCulture);
+                return "EstimatedSize";
             }
         }
 
@@ -1072,7 +1072,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_Any", resourceCulture);
+                return "FilterComparisonMethod_Any";
             }
         }
 
@@ -1083,7 +1083,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_Contains", resourceCulture);
+                return "FilterComparisonMethod_Contains";
             }
         }
 
@@ -1094,7 +1094,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_EndsWith", resourceCulture);
+                return "FilterComparisonMethod_EndsWith";
             }
         }
 
@@ -1105,7 +1105,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_Equals", resourceCulture);
+                return "FilterComparisonMethod_Equals";
             }
         }
 
@@ -1116,7 +1116,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_Regex", resourceCulture);
+                return "FilterComparisonMethod_Regex";
             }
         }
 
@@ -1127,7 +1127,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("FilterComparisonMethod_StartsWith", resourceCulture);
+                return "FilterComparisonMethod_StartsWith";
             }
         }
 
@@ -1138,7 +1138,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("HasStartupEntries", resourceCulture);
+                return "HasStartupEntries";
             }
         }
 
@@ -1149,7 +1149,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("InstallDate", resourceCulture);
+                return "InstallDate";
             }
         }
 
@@ -1160,7 +1160,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("InstallLocation", resourceCulture);
+                return "InstallLocation";
             }
         }
 
@@ -1171,7 +1171,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("InstallSource", resourceCulture);
+                return "InstallSource";
             }
         }
 
@@ -1182,7 +1182,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Is64Bit", resourceCulture);
+                return "Is64Bit";
             }
         }
 
@@ -1193,7 +1193,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsOrphaned", resourceCulture);
+                return "IsOrphaned";
             }
         }
 
@@ -1204,7 +1204,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsProtected", resourceCulture);
+                return "IsProtected";
             }
         }
 
@@ -1215,7 +1215,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsRegistered", resourceCulture);
+                return "IsRegistered";
             }
         }
 
@@ -1226,7 +1226,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsUpdate", resourceCulture);
+                return "IsUpdate";
             }
         }
 
@@ -1237,7 +1237,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsValid", resourceCulture);
+                return "IsValid";
             }
         }
 
@@ -1248,7 +1248,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("IsWebBrowser", resourceCulture);
+                return "IsWebBrowser";
             }
         }
 
@@ -1259,7 +1259,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_AppCompat_GroupName", resourceCulture);
+                return "Junk_AppCompat_GroupName";
             }
         }
 
@@ -1270,7 +1270,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_AudioPolicy_GroupName", resourceCulture);
+                return "Junk_AudioPolicy_GroupName";
             }
         }
 
@@ -1281,7 +1281,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Clsid_GroupName", resourceCulture);
+                return "Junk_Clsid_GroupName";
             }
         }
 
@@ -1292,7 +1292,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_DebugTracing_GroupName", resourceCulture);
+                return "Junk_DebugTracing_GroupName";
             }
         }
 
@@ -1303,7 +1303,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Drive_GroupName", resourceCulture);
+                return "Junk_Drive_GroupName";
             }
         }
 
@@ -1314,7 +1314,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_EventLog_GroupName", resourceCulture);
+                return "Junk_EventLog_GroupName";
             }
         }
 
@@ -1325,7 +1325,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_FirewallRule_GroupName", resourceCulture);
+                return "Junk_FirewallRule_GroupName";
             }
         }
 
@@ -1336,7 +1336,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_InstalledFolders_GroupName", resourceCulture);
+                return "Junk_InstalledFolders_GroupName";
             }
         }
 
@@ -1347,7 +1347,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_ProgramFilesOrphans_GroupName", resourceCulture);
+                return "Junk_ProgramFilesOrphans_GroupName";
             }
         }
 
@@ -1358,7 +1358,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Progress_Finishing", resourceCulture);
+                return "Junk_Progress_Finishing";
             }
         }
 
@@ -1369,7 +1369,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Progress_Startup", resourceCulture);
+                return "Junk_Progress_Startup";
             }
         }
 
@@ -1380,7 +1380,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Registry_GroupName", resourceCulture);
+                return "Junk_Registry_GroupName";
             }
         }
 
@@ -1391,7 +1391,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Shortcut_GroupName", resourceCulture);
+                return "Junk_Shortcut_GroupName";
             }
         }
 
@@ -1402,7 +1402,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Startup_GroupName", resourceCulture);
+                return "Junk_Startup_GroupName";
             }
         }
 
@@ -1413,7 +1413,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_Tracing_GroupName", resourceCulture);
+                return "Junk_Tracing_GroupName";
             }
         }
 
@@ -1424,7 +1424,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_UninstallerKey_GroupName", resourceCulture);
+                return "Junk_UninstallerKey_GroupName";
             }
         }
 
@@ -1435,7 +1435,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_UninstallerLocation_GroupName", resourceCulture);
+                return "Junk_UninstallerLocation_GroupName";
             }
         }
 
@@ -1446,7 +1446,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_UserAssist_GroupName", resourceCulture);
+                return "Junk_UserAssist_GroupName";
             }
         }
 
@@ -1457,7 +1457,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Junk_WerReports_GroupName", resourceCulture);
+                return "Junk_WerReports_GroupName";
             }
         }
 
@@ -1468,7 +1468,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("JunkRemover_Confidence", resourceCulture);
+                return "JunkRemover_Confidence";
             }
         }
 
@@ -1479,7 +1479,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ManagerError_PrematureWorkerStop", resourceCulture);
+                return "ManagerError_PrematureWorkerStop";
             }
         }
 
@@ -1490,7 +1490,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ManagerError_Skipped", resourceCulture);
+                return "ManagerError_Skipped";
             }
         }
 
@@ -1501,7 +1501,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ModifyPath", resourceCulture);
+                return "ModifyPath";
             }
         }
 
@@ -1512,7 +1512,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("ParentKeyName", resourceCulture);
+                return "ParentKeyName";
             }
         }
 
@@ -1523,7 +1523,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores", resourceCulture);
+                return "Progress_AppStores";
             }
         }
 
@@ -1534,7 +1534,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_Chocolatey", resourceCulture);
+                return "Progress_AppStores_Chocolatey";
             }
         }
 
@@ -1545,7 +1545,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_Oculus", resourceCulture);
+                return "Progress_AppStores_Oculus";
             }
         }
 
@@ -1556,7 +1556,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_Scoop", resourceCulture);
+                return "Progress_AppStores_Scoop";
             }
         }
 
@@ -1567,7 +1567,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_Steam", resourceCulture);
+                return "Progress_AppStores_Steam";
             }
         }
 
@@ -1578,7 +1578,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_Templates", resourceCulture);
+                return "Progress_AppStores_Templates";
             }
         }
 
@@ -1589,7 +1589,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_WinFeatures", resourceCulture);
+                return "Progress_AppStores_WinFeatures";
             }
         }
 
@@ -1600,7 +1600,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_WinStore", resourceCulture);
+                return "Progress_AppStores_WinStore";
             }
         }
 
@@ -1611,7 +1611,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_AppStores_WinUpdates", resourceCulture);
+                return "Progress_AppStores_WinUpdates";
             }
         }
 
@@ -1622,7 +1622,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_DriveScan", resourceCulture);
+                return "Progress_DriveScan";
             }
         }
 
@@ -1633,7 +1633,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_DriveScan_Gathering", resourceCulture);
+                return "Progress_DriveScan_Gathering";
             }
         }
 
@@ -1644,7 +1644,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_GatherUninstallerInfo", resourceCulture);
+                return "Progress_GatherUninstallerInfo";
             }
         }
 
@@ -1655,7 +1655,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_GeneratingInfo", resourceCulture);
+                return "Progress_GeneratingInfo";
             }
         }
 
@@ -1666,7 +1666,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Merging", resourceCulture);
+                return "Progress_Merging";
             }
         }
 
@@ -1677,7 +1677,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Merging_Drives", resourceCulture);
+                return "Progress_Merging_Drives";
             }
         }
 
@@ -1688,7 +1688,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Merging_Stores", resourceCulture);
+                return "Progress_Merging_Stores";
             }
         }
 
@@ -1699,7 +1699,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_MSI", resourceCulture);
+                return "Progress_MSI";
             }
         }
 
@@ -1710,7 +1710,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_MSI_sub", resourceCulture);
+                return "Progress_MSI_sub";
             }
         }
 
@@ -1721,7 +1721,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Registry", resourceCulture);
+                return "Progress_Registry";
             }
         }
 
@@ -1732,7 +1732,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Registry_Gathering", resourceCulture);
+                return "Progress_Registry_Gathering";
             }
         }
 
@@ -1743,7 +1743,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Registry_Processing", resourceCulture);
+                return "Progress_Registry_Processing";
             }
         }
 
@@ -1754,7 +1754,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Progress_Startup", resourceCulture);
+                return "Progress_Startup";
             }
         }
 
@@ -1765,7 +1765,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Publisher", resourceCulture);
+                return "Publisher";
             }
         }
 
@@ -1776,7 +1776,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("PublisherTrimmed", resourceCulture);
+                return "PublisherTrimmed";
             }
         }
 
@@ -1787,7 +1787,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("QuietUninstallPossible", resourceCulture);
+                return "QuietUninstallPossible";
             }
         }
 
@@ -1798,7 +1798,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("QuietUninstallString", resourceCulture);
+                return "QuietUninstallString";
             }
         }
 
@@ -1809,7 +1809,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryKeyName", resourceCulture);
+                return "RegistryKeyName";
             }
         }
 
@@ -1820,7 +1820,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("RegistryPath", resourceCulture);
+                return "RegistryPath";
             }
         }
 
@@ -1831,7 +1831,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Startup_Shortname_BrowserHelper", resourceCulture);
+                return "Startup_Shortname_BrowserHelper";
             }
         }
 
@@ -1842,7 +1842,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Startup_ShortName_Service", resourceCulture);
+                return "Startup_ShortName_Service";
             }
         }
 
@@ -1853,7 +1853,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("Startup_ShortName_Task", resourceCulture);
+                return "Startup_ShortName_Task";
             }
         }
 
@@ -1864,7 +1864,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupEntries", resourceCulture);
+                return "StartupEntries";
             }
         }
 
@@ -1875,7 +1875,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupManager_FailedEnable_FileNotFound", resourceCulture);
+                return "StartupManager_FailedEnable_FileNotFound";
             }
         }
 
@@ -1886,7 +1886,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupManager_Loading", resourceCulture);
+                return "StartupManager_Loading";
             }
         }
 
@@ -1897,7 +1897,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupManager_Message_Delete_Details", resourceCulture);
+                return "StartupManager_Message_Delete_Details";
             }
         }
 
@@ -1908,7 +1908,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupManager_Message_Delete_Header", resourceCulture);
+                return "StartupManager_Message_Delete_Header";
             }
         }
 
@@ -1919,7 +1919,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("StartupManager_Message_Delete_Title", resourceCulture);
+                return "StartupManager_Message_Delete_Title";
             }
         }
 
@@ -1930,7 +1930,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("SystemComponent", resourceCulture);
+                return "SystemComponent";
             }
         }
 
@@ -1941,7 +1941,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerFullFilename", resourceCulture);
+                return "UninstallerFullFilename";
             }
         }
 
@@ -1952,7 +1952,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerKind", resourceCulture);
+                return "UninstallerKind";
             }
         }
 
@@ -1963,7 +1963,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerLocation", resourceCulture);
+                return "UninstallerLocation";
             }
         }
 
@@ -1974,7 +1974,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallError_Nowaytouninstall", resourceCulture);
+                return "UninstallError_Nowaytouninstall";
             }
         }
 
@@ -1985,7 +1985,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallError_UninstallerReturnedCode", resourceCulture);
+                return "UninstallError_UninstallerReturnedCode";
             }
         }
 
@@ -1996,7 +1996,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallError_UninstallerTimedOut", resourceCulture);
+                return "UninstallError_UninstallerTimedOut";
             }
         }
 
@@ -2007,7 +2007,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_Chocolatey", resourceCulture);
+                return "UninstallerType_Chocolatey";
             }
         }
 
@@ -2018,7 +2018,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_InnoSetup", resourceCulture);
+                return "UninstallerType_InnoSetup";
             }
         }
 
@@ -2029,7 +2029,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_InstallShield", resourceCulture);
+                return "UninstallerType_InstallShield";
             }
         }
 
@@ -2040,7 +2040,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_Msiexec", resourceCulture);
+                return "UninstallerType_Msiexec";
             }
         }
 
@@ -2051,7 +2051,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_NSIS", resourceCulture);
+                return "UninstallerType_NSIS";
             }
         }
 
@@ -2062,7 +2062,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_Oculus", resourceCulture);
+                return "UninstallerType_Oculus";
             }
         }
 
@@ -2073,7 +2073,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_PowerShell", resourceCulture);
+                return "UninstallerType_PowerShell";
             }
         }
 
@@ -2084,7 +2084,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_SdbInst", resourceCulture);
+                return "UninstallerType_SdbInst";
             }
         }
 
@@ -2095,7 +2095,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_SimpleDelete", resourceCulture);
+                return "UninstallerType_SimpleDelete";
             }
         }
 
@@ -2106,7 +2106,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_Steam", resourceCulture);
+                return "UninstallerType_Steam";
             }
         }
 
@@ -2117,7 +2117,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_StoreApp", resourceCulture);
+                return "UninstallerType_StoreApp";
             }
         }
 
@@ -2128,7 +2128,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_Unknown", resourceCulture);
+                return "UninstallerType_Unknown";
             }
         }
 
@@ -2139,7 +2139,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_WindowsFeature", resourceCulture);
+                return "UninstallerType_WindowsFeature";
             }
         }
 
@@ -2150,7 +2150,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallerType_WindowsUpdate", resourceCulture);
+                return "UninstallerType_WindowsUpdate";
             }
         }
 
@@ -2161,7 +2161,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListEditor_InvalidFilter", resourceCulture);
+                return "UninstallListEditor_InvalidFilter";
             }
         }
 
@@ -2172,7 +2172,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListEditor_NewCondition", resourceCulture);
+                return "UninstallListEditor_NewCondition";
             }
         }
 
@@ -2183,7 +2183,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListEditor_NewFilter", resourceCulture);
+                return "UninstallListEditor_NewFilter";
             }
         }
 
@@ -2194,7 +2194,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListEditor_NothingMatched", resourceCulture);
+                return "UninstallListEditor_NothingMatched";
             }
         }
 
@@ -2205,7 +2205,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListItem_NewLineInValue", resourceCulture);
+                return "UninstallListItem_NewLineInValue";
             }
         }
 
@@ -2216,7 +2216,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallListItem_ValueEmpty", resourceCulture);
+                return "UninstallListItem_ValueEmpty";
             }
         }
 
@@ -2227,7 +2227,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallPossible", resourceCulture);
+                return "UninstallPossible";
             }
         }
 
@@ -2238,7 +2238,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Completed", resourceCulture);
+                return "UninstallStatus_Completed";
             }
         }
 
@@ -2249,7 +2249,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Failed", resourceCulture);
+                return "UninstallStatus_Failed";
             }
         }
 
@@ -2260,7 +2260,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Invalid", resourceCulture);
+                return "UninstallStatus_Invalid";
             }
         }
 
@@ -2271,7 +2271,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Paused", resourceCulture);
+                return "UninstallStatus_Paused";
             }
         }
 
@@ -2282,7 +2282,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Protected", resourceCulture);
+                return "UninstallStatus_Protected";
             }
         }
 
@@ -2293,7 +2293,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Skipped", resourceCulture);
+                return "UninstallStatus_Skipped";
             }
         }
 
@@ -2304,7 +2304,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Uninstalling", resourceCulture);
+                return "UninstallStatus_Uninstalling";
             }
         }
 
@@ -2315,7 +2315,7 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallStatus_Waiting", resourceCulture);
+                return "UninstallStatus_Waiting";
             }
         }
 
@@ -2326,8 +2326,9 @@ namespace BenchmarkChoco
         {
             get
             {
-                return ResourceManager.GetString("UninstallString", resourceCulture);
+                return "UninstallString";
             }
         }
     }
 }
+
