@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 
 namespace BenchmarkChoco
@@ -10,13 +6,13 @@ namespace BenchmarkChoco
     public class ChocoStrategy
     {
         [Benchmark]
-
         public void ParsingExecutableOutputStrategy()
         {
-
+            var choco = new ChocolateyFactory();
+            choco.GetUninstallerEntries(r => Console.WriteLine(r.Message));
         }
-        [Benchmark]
 
+        [Benchmark]
         public void UsingLibraryStrategy()
         {
 

@@ -111,6 +111,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -220,6 +221,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -252,9 +254,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OriginalBCUSource\ApplicationEntryTools.cs" />
+    <Compile Include="OriginalBCUSource\ApplicationUninstallerEntry.cs" />
+    <Compile Include="OriginalBCUSource\ApplicationUninstallerFactoryCache.cs" />
+    <Compile Include="OriginalBCUSource\CertificateGetter.cs" />
+    <Compile Include="OriginalBCUSource\ChocolateyFactory.cs" />
     <Compile Include="ChocoStrategy.cs" />
+    <Compile Include="OriginalBCUSource\ConfidenceCollection.cs" />
+    <Compile Include="OriginalBCUSource\ConfidenceRecord.cs" />
+    <Compile Include="OriginalBCUSource\ConfidenceRecords.cs" />
+    <Compile Include="OriginalBCUSource\ControlPanelCanonicalNames.cs" />
+    <Compile Include="OriginalBCUSource\CSIDL.cs" />
+    <Compile Include="OriginalBCUSource\DrawingTools.cs" />
+    <Compile Include="OriginalBCUSource\FileSize.cs" />
+    <Compile Include="OriginalBCUSource\GuidTools.cs" />
+    <Compile Include="OriginalBCUSource\IJunkCreator.cs" />
+    <Compile Include="OriginalBCUSource\IJunkResult.cs" />
+    <Compile Include="OriginalBCUSource\JunkResultBase.cs" />
+    <Compile Include="OriginalBCUSource\MiscExtensions.cs" />
+    <Compile Include="OriginalBCUSource\MsiTools.cs" />
+    <Compile Include="OriginalBCUSource\MsiWrapper.cs" />
+    <Compile Include="OriginalBCUSource\RegistryTools.cs" />
+    <Compile Include="OriginalBCUSource\RunProcessJunk.cs" />
+    <Compile Include="OriginalBCUSource\SerializationTools.cs" />
+    <Compile Include="OriginalBCUSource\Sift4.cs" />
+    <Compile Include="OriginalBCUSource\StartupEntryBase.cs" />
+    <Compile Include="OriginalBCUSource\TimeExtensions.cs" />
+    <Compile Include="OriginalBCUSource\EnumerableExtensions.cs" />
+    <Compile Include="OriginalBCUSource\Localisation.cs" />
+    <Compile Include="OriginalBCUSource\ParentProcessUtilities.cs" />
+    <Compile Include="OriginalBCUSource\ProcessExtensions.cs" />
+    <Compile Include="OriginalBCUSource\ProcessStartCommand.cs" />
+    <Compile Include="OriginalBCUSource\ProcessTools.cs" />
+    <Compile Include="OriginalBCUSource\CollectionExtensions.cs" />
+    <Compile Include="OriginalBCUSource\ListGenerationProgress.cs" />
+    <Compile Include="OriginalBCUSource\PathTools.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OriginalBCUSource\RegistryKeyExtensions.cs" />
+    <Compile Include="OriginalBCUSource\StringExtensions.cs" />
+    <Compile Include="OriginalBCUSource\StringTools.cs" />
+    <Compile Include="OriginalBCUSource\UninstallerType.cs" />
+    <Compile Include="OriginalBCUSource\UninstallToolsGlobalConfig.cs" />
+    <Compile Include="OriginalBCUSource\WindowsTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
