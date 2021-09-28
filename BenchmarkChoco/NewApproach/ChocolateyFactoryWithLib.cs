@@ -33,7 +33,7 @@ namespace BenchmarkChoco
 
         public ChocolateyFactoryWithLib()
         {
-            _choco = new GetChocolatey();
+            _choco = Lets.GetChocolatey();
         }
 
         // KEEP: to check if Choco is available, no need for location
