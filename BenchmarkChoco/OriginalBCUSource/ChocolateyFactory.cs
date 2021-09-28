@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BenchmarkChoco
 {
@@ -64,14 +64,17 @@ namespace BenchmarkChoco
         // REMOVE: No need for this, just remove after all references are removed.
         private static readonly string[] NewlineSeparators = StringTools.NewLineChars.ToArray();
 
-        // KEEP: One and only public method. Rewrite almost all. 
+        // KEEP: One and only public method. Rewrite almost all.
+        [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Callback is used with the result, not in the method itself.")]
+        [SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Callback is used with the result, not in the method itself.")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "Just stop nagging.")]
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
             var results = new List<ApplicationUninstallerEntry>();
 
             if (!ChocoIsAvailable) return results;
 
-            var result = StartProcessAndReadOutput(ChocoFullFilename, @"list -l -nocolor -y -r");
+            var result = StartProcessAndReadOutput(ChocoFullFilename, "list -l -nocolor -y -r");
 
             if (string.IsNullOrEmpty(result)) return results;
 
@@ -138,9 +141,9 @@ namespace BenchmarkChoco
         {
             // The path is C:\ProgramData\chocolatey\bin\choco.exe OR C:\ProgramData\chocolatey\choco.exe
             var chocoLocation = Path.GetDirectoryName(ChocoFullFilename);
-            if (chocoLocation != null && chocoLocation.EndsWith(@"\bin", StringComparison.OrdinalIgnoreCase))
-                return chocoLocation.Substring(0, chocoLocation.Length - 4);
-            return chocoLocation;
+            return chocoLocation?.EndsWith(@"\bin", StringComparison.OrdinalIgnoreCase) == true
+                ? chocoLocation.Substring(0, chocoLocation.Length - 4)
+                : chocoLocation;
         }
 
         // KEEP
@@ -155,7 +158,7 @@ namespace BenchmarkChoco
                 }
                 catch (SystemException ex)
                 {
-                    Console.WriteLine(@"Exception while extracting info from choco: " + ex.Message);
+                    Console.WriteLine("Exception while extracting info from choco: " + ex.Message);
                 }
             }
         }
