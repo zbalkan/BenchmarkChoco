@@ -4,7 +4,7 @@ using BenchmarkDotNet.Engines;
 
 namespace BenchmarkChoco
 {
-    [SimpleJob(RunStrategy.Monitoring, launchCount: 1, warmupCount: 1, targetCount: 5)]
+    [SimpleJob(RunStrategy.Monitoring, launchCount: 1, warmupCount: 1, targetCount: 20)]
     public class ChocoStrategy
     {
         [Benchmark]
