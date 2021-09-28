@@ -70,9 +70,7 @@ namespace BenchmarkChoco
                     config.CommandName = nameof(CommandNameType.list);
                     config.ListCommand.LocalOnly = true;
                 });
-            var packages = _choco.List<PackageResult>();
-
-            foreach (var package in packages)
+            foreach (var package in _choco.List<PackageResult>())
             {
                 var entry = new ApplicationUninstallerEntry
                 {
