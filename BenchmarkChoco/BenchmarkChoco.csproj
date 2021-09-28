@@ -291,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChocolateyExtensions.cs" />
+    <Compile Include="NewApproach\ChocolateyFactoryWithLib.cs" />
     <Compile Include="OriginalBCUSource\ApplicationEntryTools.cs" />
     <Compile Include="OriginalBCUSource\ApplicationUninstallerEntry.cs" />
     <Compile Include="OriginalBCUSource\ApplicationUninstallerFactoryCache.cs" />
