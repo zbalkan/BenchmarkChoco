@@ -67,11 +67,6 @@ namespace BenchmarkChoco
         // KEEP: One and only public method. Rewrite almost all. 
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback)
         {
-            if (progressCallback is null)
-            {
-                throw new ArgumentNullException(nameof(progressCallback));
-            }
-
             var results = new List<ApplicationUninstallerEntry>();
 
             if (!ChocoIsAvailable) return results;
