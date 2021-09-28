@@ -61,13 +61,13 @@ csharp_prefer_braces = false:suggestion
 #Style - expression bodied member options
 
 #prefer expression-bodied members for accessors
-csharp_style_expression_bodied_accessors = false:suggestion
+csharp_style_expression_bodied_accessors =false:silent
 #prefer expression-bodied members for constructors
-csharp_style_expression_bodied_constructors = false:suggestion
+csharp_style_expression_bodied_constructors =false:silent
 #prefer expression-bodied members for methods
-csharp_style_expression_bodied_methods = false:suggestion
+csharp_style_expression_bodied_methods =false:silent
 #prefer expression-bodied members for properties
-csharp_style_expression_bodied_properties = false:suggestion
+csharp_style_expression_bodied_properties =false:silent
 
 #Style - expression level options
 
@@ -84,11 +84,11 @@ dotnet_style_object_initializer = false:suggestion
 #Style - implicit and explicit types
 
 #prefer explicit type over var in all cases, unless overridden by another code style rule
-csharp_style_var_elsewhere = false:suggestion
+csharp_style_var_elsewhere =true:suggestion
 #prefer explicit type over var to declare variables with built-in system types such as int
-csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_for_built_in_types =true:suggestion
 #prefer explicit type over var when the type is already mentioned on the right-hand side of a declaration
-csharp_style_var_when_type_is_apparent = false:suggestion
+csharp_style_var_when_type_is_apparent =true:suggestion
 
 #Style - language keyword and framework type options
 
@@ -120,3 +120,13 @@ dotnet_style_qualification_for_field = false:suggestion
 dotnet_style_qualification_for_method = true:suggestion
 #prefer properties to be prefaced with this. in C# or Me. in Visual Basic
 dotnet_style_qualification_for_property = true:suggestion
+csharp_style_expression_bodied_indexers=false:silent
+csharp_style_expression_bodied_lambdas=false:silent
+csharp_style_prefer_index_operator=true:suggestion
+csharp_prefer_simple_using_statement=false:suggestion
+
+[*.{cs,vb}]
+dotnet_style_qualification_for_property=true:silent
+dotnet_style_qualification_for_method=true:silent
+dotnet_style_qualification_for_event=true:silent
+dotnet_style_qualification_for_field=false:silent
