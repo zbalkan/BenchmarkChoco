@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -14,7 +13,12 @@ namespace BenchmarkChoco
 {
     public static class ProcessTools
     {
-        public static bool Is64BitProcess => IntPtr.Size == 8;
+        public static bool Is64BitProcess
+        {
+            get {
+                return IntPtr.Size == 8;
+            }
+        }
 
         /// <summary>
         ///     Kill all of process's children, grandchildren, etc.
@@ -77,6 +81,9 @@ namespace BenchmarkChoco
             }
         }
 
+        /// <summary>
+        ///     Kill process gracefully.
+        /// </summary>
         /// <exception cref="ArgumentException">processName</exception>
         /// <exception cref="InvalidOperationException">
         ///     There are problems accessing the performance counter API's used to get
@@ -85,7 +92,7 @@ namespace BenchmarkChoco
         public static bool SafeKillProcess(string processName)
         {
             if (string.IsNullOrEmpty(processName))
-                throw new ArgumentException(@"Process name can't be null or empty", nameof(processName));
+                throw new ArgumentException("Process name can't be null or empty", nameof(processName));
 
             foreach (var p in Process.GetProcessesByName(processName))
             {
@@ -173,7 +180,7 @@ namespace BenchmarkChoco
                     // If no ending quote has been found, explode gracefully.
                     throw new FormatException(Localisation.Error_SeparateArgsFromCommand_MissingQuotationMark);
                 }
-                pathEnd += 1; //?
+                pathEnd++; //?
             }
 
             // If quotation marks were missing, check for any invalid characters after last dot
@@ -266,8 +273,10 @@ namespace BenchmarkChoco
 
             // The invalid char has to have at least 1 space before it to count as an argument. Otherwise the input is likely garbage.
             if (breakIndex > 0 && fullCommand[breakIndex - 1] == ' ')
+            {
                 return new ProcessStartCommand(fullCommand.Substring(0, breakIndex - 1).TrimEnd(),
                     fullCommand.Substring(breakIndex));
+            }
 
             throw new FormatException(Localisation.Error_SeparateArgsFromCommand_NoDot + "\n" + fullCommand);
         }

@@ -51,12 +51,11 @@ namespace BenchmarkChoco
             return null;
         }
 
-
         /// <summary>
-        /// This class suppresses stack walks for unmanaged code permission. 
-        /// (System.Security.SuppressUnmanagedCodeSecurityAttribute is applied to this class.) 
-        /// This class is for methods that are safe for anyone to call. 
-        /// Callers of these methods are not required to perform a full security review to make sure that the 
+        /// This class suppresses stack walks for unmanaged code permission.
+        /// (System.Security.SuppressUnmanagedCodeSecurityAttribute is applied to this class.)
+        /// This class is for methods that are safe for anyone to call.
+        /// Callers of these methods are not required to perform a full security review to make sure that the
         /// usage is secure because the methods are harmless for any caller.
         /// </summary>
         [SuppressUnmanagedCodeSecurity]
@@ -73,10 +72,13 @@ namespace BenchmarkChoco
             var gDiff = to.G - from.G;
             var bDiff = to.B - from.B;
 
-            return Color.FromArgb((byte)(from.A + ratio * aDiff), (byte)(from.R + ratio * rDiff),
-                (byte)(from.G + ratio * gDiff), (byte)(from.B + ratio * bDiff));
+            return Color.FromArgb((byte)(from.A + (ratio * aDiff)), (byte)(from.R + (ratio * rDiff)),
+                (byte)(from.G + (ratio * gDiff)), (byte)(from.B + (ratio * bDiff)));
         }
 
+        /// <summary>
+        ///     Set bitmap size with given dimensions
+        /// </summary>
         /// <exception cref="Exception">The operation failed.</exception>
         public static Bitmap ResizeBitmap(Image sourceBmp, int newWidth, int newHeight)
         {

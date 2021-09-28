@@ -33,7 +33,7 @@ namespace BenchmarkChoco
 
         public static bool IsZeroOrNull(this Version obj)
         {
-            return obj == null || obj.Equals(new Version(0, 0, 0, 0))
+            return obj?.Equals(new Version(0, 0, 0, 0)) != false
                 || obj.Equals(new Version(0, 0, 0)) || obj.Equals(new Version(0, 0));
         }
     }

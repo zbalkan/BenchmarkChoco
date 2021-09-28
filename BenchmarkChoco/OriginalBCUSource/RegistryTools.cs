@@ -85,8 +85,10 @@ namespace BenchmarkChoco
             if (fullFilename == null)
                 throw new ArgumentNullException(nameof(fullFilename));
             if (!File.Exists(fullFilename) || !fullFilename.EndsWith(".reg", StringComparison.CurrentCultureIgnoreCase))
+            {
                 throw new ArgumentException(Localisation.RegistryTools_AddRegToRegistry_FileNotExist,
                     nameof(fullFilename));
+            }
 
             RunRegeditCommand($"{(silent ? "/s " : string.Empty)}\"{fullFilename}\"");
         }
@@ -135,11 +137,11 @@ namespace BenchmarkChoco
             params KeyValuePair<string, string>[] values)
         {
             var builder = new StringBuilder();
-            builder.AppendLine(@"Windows Registry Editor Version 5.00");
+            builder.AppendLine("Windows Registry Editor Version 5.00");
             foreach (var value in values)
             {
                 builder.AppendLine();
-                builder.AppendFormat(@"[{0}]", containingKeyPath);
+                builder.AppendFormat("[{0}]", containingKeyPath);
                 builder.AppendLine();
                 builder.AppendFormat("\"{0}\"=\"{1}\"", value.Key,
                     (value.Value ?? string.Empty).Replace(@"\", @"\\").Replace("\"", "\\\""));
@@ -148,6 +150,9 @@ namespace BenchmarkChoco
             File.WriteAllText(outputFileName, builder.ToString());
         }
 
+        /// <summary>
+        ///     Export registry records with Reg.exe /e argument.
+        /// </summary>
         /// <exception cref="IOException">Registry export failed because of filesystem or permission error. </exception>
         public static void ExportRegistry(string outputFileName, string registryPath)
         {
@@ -216,31 +221,23 @@ namespace BenchmarkChoco
 
         private static RegistryKey GetRootHive(string fullPath)
         {
-            RegistryKey rootKey;
             switch (GetKeyRoot(fullPath, true))
             {
                 case HklmShortRootName:
-                    rootKey = Registry.LocalMachine;
-                    break;
+                    return Registry.LocalMachine;
                 case HkcrShortRootName:
-                    rootKey = Registry.ClassesRoot;
-                    break;
+                    return Registry.ClassesRoot;
                 case HkcuShortRootName:
-                    rootKey = Registry.CurrentUser;
-                    break;
+                    return Registry.CurrentUser;
                 case HkuShortRootName:
                 case HkuShortRootName2:
-                    rootKey = Registry.Users;
-                    break;
+                    return Registry.Users;
                 case HkccShortRootName:
-                    rootKey = Registry.CurrentConfig;
-                    break;
+                    return Registry.CurrentConfig;
 
                 default:
                     throw new ArgumentException("Path root is invalid or missing");
             }
-
-            return rootKey;
         }
 
         /// <summary>
@@ -336,12 +333,16 @@ namespace BenchmarkChoco
         public static void RemoveRegistryKey(string fullRegistryPath)
         {
             if (string.IsNullOrEmpty(fullRegistryPath))
+            {
                 throw new ArgumentException(Localisation.RegistryTools_RemoveRegistryKey_PathEmptyNull,
                     nameof(fullRegistryPath));
+            }
 
             if (fullRegistryPath.Count(x => x.Equals('\\')) < 2)
+            {
                 throw new ArgumentException(Localisation.RegistryTools_RemoveRegistryKey_PointsAtRoot,
                     nameof(fullRegistryPath));
+            }
 
             using (var key = OpenRegistryKey(Path.GetDirectoryName(fullRegistryPath), true))
             {
@@ -358,16 +359,22 @@ namespace BenchmarkChoco
         public static void RemoveRegistryValue(string fullRegistryPath, string valueName)
         {
             if (string.IsNullOrEmpty(fullRegistryPath))
+            {
                 throw new ArgumentException(Localisation.RegistryTools_RemoveRegistryKey_PathEmptyNull,
                     nameof(fullRegistryPath));
+            }
 
             if (string.IsNullOrEmpty(valueName))
+            {
                 throw new ArgumentException(Localisation.RegistryTools_RemoveRegistryKey_RemoveDefault,
                     nameof(valueName));
+            }
 
             if (fullRegistryPath.Count(x => x.Equals('\\')) < 2)
+            {
                 throw new ArgumentException(Localisation.RegistryTools_RemoveRegistryKey_PointsAtRoot,
                     nameof(fullRegistryPath));
+            }
 
             using (var key = OpenRegistryKey(fullRegistryPath, true))
             {
@@ -426,6 +433,9 @@ namespace BenchmarkChoco
             }
         }
 
+        /// <summary>
+        ///     Start Regedit with given path.
+        /// </summary>
         /// <exception cref="IOException">Could not complete this operation. </exception>
         public static void OpenRegKeyInRegedit(string registryPath)
         {

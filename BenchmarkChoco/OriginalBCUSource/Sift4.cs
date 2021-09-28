@@ -8,6 +8,7 @@ namespace BenchmarkChoco
     {
         private readonly Options _options;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "<Pending>")]
         public Sift4(Options options)
         {
             if (options == null) options = new Options();
@@ -160,8 +161,8 @@ namespace BenchmarkChoco
         /// <returns></returns>
         public static double CommonDistance(string s1, string s2, int maxOffset, int maxDistance = 0)
         {
-            var l1 = s1 == null ? 0 : s1.Length;
-            var l2 = s2 == null ? 0 : s2.Length;
+            var l1 = (s1?.Length) ?? 0;
+            var l2 = (s2?.Length) ?? 0;
 
             if (l1 == 0) return l2;
             if (l2 == 0) return l1;
@@ -267,8 +268,8 @@ namespace BenchmarkChoco
         /// <returns></returns>
         public static int SimplestDistance(string s1, string s2, int maxOffset)
         {
-            var l1 = s1 == null ? 0 : s1.Length;
-            var l2 = s2 == null ? 0 : s2.Length;
+            var l1 = (s1?.Length) ?? 0;
+            var l2 = (s2?.Length) ?? 0;
 
             if (l1 == 0) return l2;
             if (l2 == 0) return l1;
@@ -350,7 +351,7 @@ namespace BenchmarkChoco
 
             /// <summary>
             /// The function that determines the value of a match of two tokens (the equivalent of adding 1 to the lcss when two characters match)
-            /// This assumes that the TokenMatcher function is a lot less expensive than this evaluator. If that is not the case, 
+            /// This assumes that the TokenMatcher function is a lot less expensive than this evaluator. If that is not the case,
             /// you can optimize the speed of the algorithm by using only the matching evaluator and then calculating if two tokens match on the returned value.
             /// </summary>
             public Func<string, string, double> MatchingEvaluator { get; set; }

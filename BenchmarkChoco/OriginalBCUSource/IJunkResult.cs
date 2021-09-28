@@ -1,6 +1,4 @@
-﻿using System.Security.Permissions;
-
-namespace BenchmarkChoco
+﻿namespace BenchmarkChoco
 {
     public interface IJunkResult
     {

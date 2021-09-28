@@ -17,7 +17,6 @@ namespace BenchmarkChoco
 
         public override void Backup(string backupDirectory)
         {
-
         }
 
         public override void Delete()
@@ -46,7 +45,7 @@ namespace BenchmarkChoco
             {
                 WindowsTools.OpenExplorerFocusedOnObject(ProcessToStart.FileName);
             }
-            catch (SystemException ex)
+            catch (SystemException)
             {
                 //PremadeDialogs.GenericError(ex);
             }

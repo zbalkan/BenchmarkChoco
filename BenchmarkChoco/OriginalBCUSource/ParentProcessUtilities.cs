@@ -35,7 +35,7 @@ namespace BenchmarkChoco
         /// <returns>An instance of the Process class.</returns>
         public static Process GetParentProcess(int id)
         {
-            Process process = Process.GetProcessById(id);
+            var process = Process.GetProcessById(id);
             return GetParentProcess(process.Handle);
         }
 
@@ -46,9 +46,8 @@ namespace BenchmarkChoco
         /// <returns>An instance of the Process class.</returns>
         public static Process GetParentProcess(IntPtr handle)
         {
-            ParentProcessUtilities pbi = new ParentProcessUtilities();
-            int returnLength;
-            int status = NtQueryInformationProcess(handle, 0, ref pbi, Marshal.SizeOf(pbi), out returnLength);
+            var pbi = new ParentProcessUtilities();
+            var status = NtQueryInformationProcess(handle, 0, ref pbi, Marshal.SizeOf(pbi), out _);
             if (status != 0)
                 throw new Win32Exception(status);
 

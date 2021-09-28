@@ -21,7 +21,7 @@ namespace BenchmarkChoco
                 dir = dir.Parent;
             AppLocation = dir.FullName;
 
-            UninstallerAutomatizerPath = Path.Combine(AssemblyLocation, @"UninstallerAutomatizer.exe");
+            UninstallerAutomatizerPath = Path.Combine(AssemblyLocation, "UninstallerAutomatizer.exe");
             UninstallerAutomatizerExists = File.Exists(UninstallerAutomatizerPath);
 
             QuestionableDirectoryNames = new[]
@@ -201,9 +201,11 @@ namespace BenchmarkChoco
                 pfDirectories.Add(new KeyValuePair<string, bool?>(pf64, true));
 
             if (includeUserDirectories && CustomProgramFiles != null)
+            {
                 pfDirectories.AddRange(CustomProgramFiles.Where(
                     x => !pfDirectories.Any(y => PathTools.PathsEqual(x, y.Key)))
                     .Select(x => new KeyValuePair<string, bool?>(x, null)));
+            }
 
             var output = new List<KeyValuePair<DirectoryInfo, bool?>>();
             foreach (var directory in pfDirectories.ToList())

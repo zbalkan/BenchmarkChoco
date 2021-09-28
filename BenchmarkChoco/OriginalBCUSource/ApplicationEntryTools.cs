@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Diagnostics;
 using System.IO;
 
@@ -38,12 +37,16 @@ namespace BenchmarkChoco
 
                 if (!string.IsNullOrEmpty(otherEntry.InstallLocation)
                     && baseEntry.UninstallString.Contains(otherEntry.InstallLocation))
+                {
                     return 100;
+                }
             }
 
             if (!string.IsNullOrEmpty(baseEntry.UninstallerLocation) && !string.IsNullOrEmpty(otherEntry.InstallLocation)
                 && baseEntry.UninstallerLocation.StartsWith(otherEntry.InstallLocation, StringComparison.InvariantCultureIgnoreCase))
+            {
                 return 100;
+            }
 
             var score = 0;
 
@@ -176,7 +179,7 @@ namespace BenchmarkChoco
                     var fileName = ProcessTools.SeparateArgsFromCommand(uninstallString).FileName;
 
                     Debug.Assert(!string.IsNullOrEmpty(fileName?.Trim()),
-                        $@"SeparateArgsFromCommand failed for {fileName}");
+                        $"SeparateArgsFromCommand failed for {fileName}");
 
                     return fileName;
                 }

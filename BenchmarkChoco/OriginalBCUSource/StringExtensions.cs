@@ -28,8 +28,10 @@ namespace BenchmarkChoco
             if (pattern == null)
                 throw new ArgumentNullException(nameof(pattern));
             if (value.Length != pattern.Sum())
+            {
                 throw new ArgumentException(
                     "Pattern doesn't match the string. Sum of the pattern's parts has to have length equal to the length the string.");
+            }
 
             var returnString = new StringBuilder();
 
@@ -69,7 +71,7 @@ namespace BenchmarkChoco
         /// </summary>
         public static string Append(this string value, string append)
         {
-            return String.Concat(value, append); // value + append;
+            return string.Concat(value, append); // value + append;
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace BenchmarkChoco
         /// </summary>
         public static string Append(this string value, params string[] append)
         {
-            return String.Concat(value, String.Concat(append)); // value + append;
+            return string.Concat(value, string.Concat(append)); // value + append;
         }
 
         /// <summary>
@@ -89,7 +91,7 @@ namespace BenchmarkChoco
         /// <returns>Base string with or without the appended extra string</returns>
         public static string AppendIf(this string value, bool expression, params string[] append)
         {
-            return expression ? String.Concat(value, String.Concat(append)) : value;
+            return expression ? string.Concat(value, string.Concat(append)) : value;
         }
 
         public static StringBuilder AppendIf(this StringBuilder value, bool expression, string append)
@@ -107,6 +109,9 @@ namespace BenchmarkChoco
             return value;
         }
 
+        /// <summary>
+        /// Extension methot to ease Contains operation.
+        /// </summary>
         /// <exception cref="ArgumentException">
         ///     <paramref name="comparisonType" /> is not a valid
         ///     <see cref="T:System.StringComparison" /> value.
@@ -191,8 +196,8 @@ namespace BenchmarkChoco
         public static string ExtendedTrimEndAny(this string s, IEnumerable<string> trimmers,
             StringComparison comparisonType)
         {
-            if (String.IsNullOrEmpty(s))
-                return String.Empty;
+            if (string.IsNullOrEmpty(s))
+                return string.Empty;
 
             var trimmerList = trimmers as IList<string> ?? trimmers.ToList();
             var resultStr = s.Trim().Trim(',', '.', ' ');
@@ -208,7 +213,7 @@ namespace BenchmarkChoco
 
                     // Exit the loop quickly if resultStr contains only the trimmer. Also checks for negative lenght.
                     if (cutNum <= 0)
-                        return String.Empty;
+                        return string.Empty;
 
                     resultStr = resultStr.Substring(0, cutNum);
                     resultStr = resultStr.Trim().Trim(',', '.', ' ');
@@ -225,8 +230,8 @@ namespace BenchmarkChoco
         public static string ExtendedTrim(this string s, IEnumerable<string> trimmers,
             StringComparison comparisonType)
         {
-            if (String.IsNullOrEmpty(s))
-                return String.Empty;
+            if (string.IsNullOrEmpty(s))
+                return string.Empty;
 
             var trimmerList = trimmers as IList<string> ?? trimmers.ToList();
             var resultStr = s.Trim();
@@ -242,7 +247,7 @@ namespace BenchmarkChoco
                         var cutNum = resultStr.Length - trimmer.Length;
 
                         if (cutNum <= 0)
-                            return String.Empty;
+                            return string.Empty;
 
                         resultStr = resultStr.Substring(0, cutNum).Trim();
                         rerun = true;
@@ -253,7 +258,7 @@ namespace BenchmarkChoco
                         var cutNum = resultStr.Length - trimmer.Length;
 
                         if (cutNum <= 0)
-                            return String.Empty;
+                            return string.Empty;
 
                         resultStr = resultStr.Substring(trimmer.Length).Trim();
                         rerun = true;
@@ -294,15 +299,15 @@ namespace BenchmarkChoco
         /// <returns></returns>
         public static bool IsNotEmpty(this string input)
         {
-            return !String.IsNullOrEmpty(input);
+            return !string.IsNullOrEmpty(input);
         }
 
         public static string RemoveInvalidPathChars(this string value)
         {
             if (value == null)
-                return String.Empty;
+                return string.Empty;
             return StringTools.InvalidPathChars.Aggregate(value,
-                (current, str) => current.Replace(str.ToString(), String.Empty));
+                (current, str) => current.Replace(str.ToString(), string.Empty));
         }
 
         /// <summary>
@@ -311,9 +316,9 @@ namespace BenchmarkChoco
         public static string RemoveNewLines(this string value)
         {
             if (value == null)
-                return String.Empty;
+                return string.Empty;
 
-            return StringTools.NewLineChars.Aggregate(value, (current, str) => current.Replace(str, String.Empty));
+            return StringTools.NewLineChars.Aggregate(value, (current, str) => current.Replace(str, string.Empty));
         }
 
         /// <summary>
@@ -323,8 +328,8 @@ namespace BenchmarkChoco
         public static string RemoveSpecialCharacters(this string value)
         {
             if (value == null)
-                return String.Empty;
-            return Regex.Replace(value, @"[^\w ]", String.Empty); //Path.GetInvalidFileNameChars()
+                return string.Empty;
+            return Regex.Replace(value, @"[^\w ]", string.Empty); //Path.GetInvalidFileNameChars()
         }
 
         /// <summary>
@@ -344,8 +349,8 @@ namespace BenchmarkChoco
         /// </summary>
         public static string ToCamelCase(this string baseStr)
         {
-            if (String.IsNullOrEmpty(baseStr))
-                return String.Empty;
+            if (string.IsNullOrEmpty(baseStr))
+                return string.Empty;
 
             baseStr = baseStr.ToPascalCase();
             return baseStr.Substring(0, 1).ToLowerInvariant() + baseStr.Substring(1);
@@ -356,8 +361,8 @@ namespace BenchmarkChoco
         /// </summary>
         public static string ToNormalCase(this string baseStr)
         {
-            if (String.IsNullOrEmpty(baseStr))
-                return String.Empty;
+            if (string.IsNullOrEmpty(baseStr))
+                return string.Empty;
 
             baseStr = baseStr.ToTitleCase().ToLowerInvariant();
 
@@ -370,13 +375,13 @@ namespace BenchmarkChoco
         public static string ToPascalCase(this string baseStr)
         {
             baseStr = baseStr?.Trim();
-            if (String.IsNullOrEmpty(baseStr))
-                return String.Empty;
+            if (string.IsNullOrEmpty(baseStr))
+                return string.Empty;
 
             if (!baseStr.Contains(" ")) return baseStr;
 
             baseStr = CultureInfo.GetCultureInfo("en-US").TextInfo.ToTitleCase(baseStr);
-            return String.Join(String.Empty, baseStr.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries));
+            return string.Concat(baseStr.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries));
         }
 
         /// <summary>
@@ -398,8 +403,8 @@ namespace BenchmarkChoco
         /// </summary>
         public static string ToTitleCase(this string baseStr)
         {
-            if (String.IsNullOrEmpty(baseStr))
-                return String.Empty;
+            if (string.IsNullOrEmpty(baseStr))
+                return string.Empty;
 
             const string pattern = @"(?<=\w)(?=[A-Z])";
             baseStr = Regex.Replace(baseStr.ToPascalCase(), pattern, " ", RegexOptions.None);

@@ -12,9 +12,19 @@ namespace BenchmarkChoco
         {
         }
 
-        public bool IsEmpty => _items.Count == 0;
+        public bool IsEmpty
+        {
+            get {
+                return _items.Count == 0;
+            }
+        }
 
-        public IEnumerable<ConfidenceRecord> ConfidenceParts => _items;
+        public IEnumerable<ConfidenceRecord> ConfidenceParts
+        {
+            get {
+                return _items;
+            }
+        }
 
         public ConfidenceLevel GetConfidence()
         {
@@ -43,7 +53,7 @@ namespace BenchmarkChoco
         public string GetWorstOffender()
         {
             var lowest = _items.Min(x => x.Change);
-            var item = _items.FirstOrDefault(x => x.Change.Equals(lowest));
+            var item = _items.Find(x => x.Change.Equals(lowest));
 
             if (item != null) return item.Reason ?? string.Empty;
             return string.Empty;

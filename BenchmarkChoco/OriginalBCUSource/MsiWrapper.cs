@@ -81,6 +81,7 @@ namespace BenchmarkChoco
             INSTALLMODE_DEFAULT = 0 // install, if absent
         };
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Readability", "RCS1234:Duplicate enum value.", Justification = "<Pending>")]
         public enum INSTALLSTATE
         {
             INSTALLSTATE_NOTUSED = -7, // component disabled
@@ -205,7 +206,6 @@ namespace BenchmarkChoco
         // API functions that require UI.
         // -------------------------------------------------------------------------
 
-
         // Enable internal UI
         [DllImport("msi", CharSet = CharSet.Auto)] // UI level
         // handle of owner window
@@ -270,7 +270,6 @@ namespace BenchmarkChoco
         public static extern int MsiCollectUserInfo(
             string szProduct); // product code, string GUID
         //msiQuery.h
-
 
         // -------------------------------------------------------------------------
         // Installer database management functions - not used by custom actions

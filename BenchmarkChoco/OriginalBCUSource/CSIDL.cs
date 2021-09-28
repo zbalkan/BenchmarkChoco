@@ -1,5 +1,6 @@
 ﻿namespace BenchmarkChoco
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Readability", "RCS1154:Sort enum members.", Justification = "<Pending>")]
     public enum CSIDL
     {
         //Application Data

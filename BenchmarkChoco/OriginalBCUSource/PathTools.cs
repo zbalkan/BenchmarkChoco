@@ -92,7 +92,7 @@ namespace BenchmarkChoco
             }
             catch (ManagementException e)
             {
-                Console.WriteLine($@"An error occurred while querying for WMI data: {e.Message}");
+                Console.WriteLine($"An error occurred while querying for WMI data: {e.Message}");
             }
         }
 
@@ -126,7 +126,10 @@ namespace BenchmarkChoco
             return combinations.FirstOrDefault(File.Exists) ?? GetExecutablePathFromAppPaths(filename);
         }
 
-        /// <param name="exename">name of the exectuable, including .exe</param>
+        /// <summary>
+        ///     Returns applicatin path from registry.
+        /// </summary>
+        /// <param name="exename">name of the executable, including .exe</param>
         private static string GetExecutablePathFromAppPaths(string exename)
         {
             const string appPaths = @"Software\Microsoft\Windows\CurrentVersion\App Paths";

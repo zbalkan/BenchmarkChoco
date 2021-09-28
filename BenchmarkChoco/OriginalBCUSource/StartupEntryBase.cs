@@ -54,9 +54,14 @@ namespace BenchmarkChoco
         /// <summary>
         ///     Combined ParentLongName and EntryLongName
         /// </summary>
-        public virtual string FullLongName => ParentLongName != null && EntryLongName != null
-            ? PathTools.GenerousCombine(ParentLongName, EntryLongName)
-            : null;
+        public virtual string FullLongName
+        {
+            get {
+                return ParentLongName != null && EntryLongName != null
+? PathTools.GenerousCombine(ParentLongName, EntryLongName)
+: null;
+            }
+        }
 
         /// <summary>
         ///     Delete this startup entry from the system
@@ -111,10 +116,9 @@ namespace BenchmarkChoco
                 Company = info.CompanyName;
 
                 var fileDesc = StringTools.StripStringFromVersionNumber(info.FileDescription);
-                if (!string.IsNullOrEmpty(fileDesc))
-                    ProgramNameTrimmed = fileDesc;
-                else
-                    ProgramNameTrimmed = !string.IsNullOrEmpty(info.ProductName)
+                ProgramNameTrimmed = !string.IsNullOrEmpty(fileDesc)
+                    ? fileDesc
+                    : !string.IsNullOrEmpty(info.ProductName)
                         ? info.ProductName
                         : StringTools.StripStringFromVersionNumber(ProgramName);
             }

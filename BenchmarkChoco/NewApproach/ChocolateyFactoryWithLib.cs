@@ -84,7 +84,7 @@ namespace BenchmarkChoco
                     AboutUrl = package.Package.ProjectUrl?.AbsolutePath ?? package.Package.DocsUrl?.AbsolutePath,
                     Comment = package.Package.Description ?? package.Package.Tags,
 
-                    // TODO
+                    // Unknown parts
                     DisplayIcon = string.Empty,
                     EstimatedSize = FileSize.Empty,
                     IconBitmap = null,

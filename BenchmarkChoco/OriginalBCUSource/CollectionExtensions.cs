@@ -164,7 +164,7 @@ namespace BenchmarkChoco
             switch (list.Count)
             {
                 case 0:
-                    return default(T);
+                    return default;
                 case 1:
                     return list[0];
                 default:
@@ -219,8 +219,8 @@ namespace BenchmarkChoco
         }
 
         /// <summary>
-        /// Rotate the collection to the left so that the item at startIndex becomes index 0. 
-        /// Elements rotated to the left wrap around, so the number of elements stays the same. 
+        /// Rotate the collection to the left so that the item at startIndex becomes index 0.
+        /// Elements rotated to the left wrap around, so the number of elements stays the same.
         /// </summary>
         public static IEnumerable<T> Rotate<T>(this ICollection<T> targets, int startIndex)
         {

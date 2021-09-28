@@ -21,7 +21,7 @@ namespace BenchmarkChoco
                 if (GuidTools.GuidTryParse(guidString, out var guid))
                     yield return guid;
                 else
-                    Console.WriteLine($@"Invalid MSI guid in MsiEnumProducts: {guidString}");
+                    Console.WriteLine($"Invalid MSI guid in MsiEnumProducts: {guidString}");
             }
         }
 

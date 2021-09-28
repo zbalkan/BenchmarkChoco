@@ -10,6 +10,9 @@ namespace BenchmarkChoco
         {
         }
 
+        /// <summary>
+        ///     Sanitize command before starting.
+        /// </summary>
         /// <exception cref="ArgumentNullException">The values of 'filename' and 'args' cannot be null. </exception>
         public ProcessStartCommand(string filename, string args)
         {
@@ -36,7 +39,7 @@ namespace BenchmarkChoco
                 result = null;
             }
 
-            return (result != null);
+            return result != null;
         }
 
         public string ToCommandLine()

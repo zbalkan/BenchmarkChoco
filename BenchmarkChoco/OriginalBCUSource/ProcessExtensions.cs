@@ -39,7 +39,7 @@ namespace BenchmarkChoco
             }
             catch (Exception e1)
             {
-                Console.WriteLine(@"Failed to GetChildProcesses using ManagementObjectSearcher: " + e1.Message);
+                Console.WriteLine("Failed to GetChildProcesses using ManagementObjectSearcher: " + e1.Message);
 
                 try
                 {
@@ -49,7 +49,7 @@ namespace BenchmarkChoco
                         .ToList();
 
                     var newChildren = allProcesses.Where(p => p.parent == process).Select(x => x.proc).ToList();
-                    while (newChildren.Any())
+                    while (newChildren.Count > 0)
                     {
                         results.AddRange(newChildren);
                         newChildren = allProcesses.Where(p => newChildren.Contains(p.parent)).Select(x => x.proc).ToList();
@@ -57,7 +57,7 @@ namespace BenchmarkChoco
                 }
                 catch (Exception e2)
                 {
-                    Console.WriteLine(@"Failed to GetChildProcesses using ParentProcessUtilities: " + e2);
+                    Console.WriteLine("Failed to GetChildProcesses using ParentProcessUtilities: " + e2);
                 }
             }
 
@@ -113,6 +113,7 @@ namespace BenchmarkChoco
         ///     but don't return until this process and all of its child processes end.
         /// </summary>
         /// <returns>Exit code returned by the main process</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RCS1246:Use element access.", Justification = "<Pending>")]
         public static int StartAndWait(this ProcessStartInfo startInfo)
         {
             var uninstaller = Process.Start(startInfo);
@@ -122,7 +123,7 @@ namespace BenchmarkChoco
             {
                 var children = uninstaller.GetChildProcesses();
                 var processes = children as IList<Process> ?? children.ToList();
-                if (processes.Any())
+                if (processes.Count > 0)
                     processes.First().WaitForExit(1000);
                 else
                     break;

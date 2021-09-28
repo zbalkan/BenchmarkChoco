@@ -67,21 +67,41 @@ namespace BenchmarkChoco
         }
 
         [XmlIgnore]
-        public string DisplayNameTrimmed => StringTools.StripStringFromVersionNumber(DisplayName);
+        public string DisplayNameTrimmed
+        {
+            get {
+                return StringTools.StripStringFromVersionNumber(DisplayName);
+            }
+        }
 
         [XmlIgnore]
-        public string PublisherTrimmed => string.IsNullOrEmpty(Publisher)
-            ? string.Empty
-            : Publisher.Replace("(R)", string.Empty)
-                .ExtendedTrimEndAny(CompanyNameEndTrimmers, StringComparison.CurrentCultureIgnoreCase);
+        public string PublisherTrimmed
+        {
+            get {
+                return string.IsNullOrEmpty(Publisher)
+? string.Empty
+: Publisher.Replace("(R)", string.Empty)
+.ExtendedTrimEndAny(CompanyNameEndTrimmers, StringComparison.CurrentCultureIgnoreCase);
+            }
+        }
 
         [XmlIgnore]
-        public bool QuietUninstallPossible => !string.IsNullOrEmpty(QuietUninstallString) ||
-                                              (UninstallerKind == UninstallerType.Msiexec &&
-                                               BundleProviderKey != Guid.Empty);
+        public bool QuietUninstallPossible
+        {
+            get {
+                return !string.IsNullOrEmpty(QuietUninstallString) ||
+              (UninstallerKind == UninstallerType.Msiexec &&
+               BundleProviderKey != Guid.Empty);
+            }
+        }
 
         [XmlIgnore]
-        public bool UninstallPossible => !string.IsNullOrEmpty(UninstallString);
+        public bool UninstallPossible
+        {
+            get {
+                return !string.IsNullOrEmpty(UninstallString);
+            }
+        }
 
         public string AboutUrl { get; set; }
 
@@ -98,13 +118,11 @@ namespace BenchmarkChoco
             set { _displayIcon = CleanupPath(value, true); }
         }
 
-
         public string DisplayVersion { get; set; }
 
         public FileSize EstimatedSize { get; set; }
 
         public DateTime InstallDate { get; set; }
-
 
         public string InstallLocation
         {
@@ -112,20 +130,17 @@ namespace BenchmarkChoco
             set { _installLocation = CleanupPath(value); }
         }
 
-
         public string InstallSource
         {
             get { return _installSource; }
             set { _installSource = CleanupPath(value); }
         }
 
-
         public MachineType Is64Bit { get; set; }
 
         /// <summary>
         ///     Protection from uninstalling.
         /// </summary>
-
         public bool IsProtected { get; set; }
 
         /// <summary>
@@ -136,27 +151,22 @@ namespace BenchmarkChoco
         /// <summary>
         ///     The application is present on the drive, but not in any of the application listings
         /// </summary>
-
         public bool IsOrphaned { get; set; }
 
         /// <summary>
         ///     True if this is an update for another product
         /// </summary>
-
         public bool IsUpdate { get; set; }
 
         /// <summary>
         ///     True if the application can be uninstalled. False if the uninstaller is missing or is otherwise invalid.
         /// </summary>
-
         public bool IsValid { get; set; }
 
         /// <summary>
         ///     True if the application is listed as a web browser.
         /// </summary>
-
         public bool IsWebBrowser { get; set; }
-
 
         public string ModifyPath
         {
@@ -166,14 +176,12 @@ namespace BenchmarkChoco
 
         public string ParentKeyName { get; set; }
 
-
         public string Publisher { get; set; }
-
 
         public string QuietUninstallString { get; set; }
 
         /// <summary>
-        /// Get a unique cache ID of this item. 
+        /// Get a unique cache ID of this item.
         /// Returns null if there isn't enough information to get a reasonably unique key.
         /// </summary>
         public string GetCacheId()
@@ -208,7 +216,6 @@ namespace BenchmarkChoco
             set { _ratingId = value; }
         }
 
-
         public string RegistryKeyName { get; set; }
 
         /// <summary>
@@ -219,12 +226,14 @@ namespace BenchmarkChoco
         [XmlIgnore]
         public IEnumerable<StartupEntryBase> StartupEntries { get; set; }
 
-
-        public bool HasStartups => StartupEntries != null && StartupEntries.Any();
-
+        public bool HasStartups
+        {
+            get {
+                return StartupEntries?.Any() == true;
+            }
+        }
 
         public bool SystemComponent { get; set; }
-
 
         public string UninstallerFullFilename
         {
@@ -238,13 +247,11 @@ namespace BenchmarkChoco
             }
         }
 
-
         public UninstallerType UninstallerKind { get; set; }
 
         //        //public bool IsInstalled { get; internal set; }
 
         public string UninstallerLocation { get; set; }
-
 
         public string UninstallString
         {
@@ -340,7 +347,7 @@ namespace BenchmarkChoco
             if (!temp.IsNotEmpty()) return null;
 
             temp = temp.ToLowerInvariant().Replace("www.",
-                temp.StartsWith("www.", StringComparison.InvariantCulture) ? @"http://www." : string.Empty);
+                temp.StartsWith("www.", StringComparison.InvariantCulture) ? "http://www." : string.Empty);
 
             try
             {

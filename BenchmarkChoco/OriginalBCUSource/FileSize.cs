@@ -185,31 +185,21 @@ namespace BenchmarkChoco
         {
             if (range == SizeRange.None)
                 return string.Empty;
-
-            string rangeName;
             switch (range)
             {
                 case SizeRange.Tb:
-                    rangeName = longString ? Localisation.FileSize_TB_Long : Localisation.FileSize_TB_Short;
-                    break;
+                    return longString ? Localisation.FileSize_TB_Long : Localisation.FileSize_TB_Short;
                 case SizeRange.Gb:
-                    rangeName = longString ? Localisation.FileSize_GB_Long : Localisation.FileSize_GB_Short;
-                    break;
+                    return longString ? Localisation.FileSize_GB_Long : Localisation.FileSize_GB_Short;
                 case SizeRange.Mb:
-                    rangeName = longString ? Localisation.FileSize_MB_Long : Localisation.FileSize_MB_Short;
-                    break;
+                    return longString ? Localisation.FileSize_MB_Long : Localisation.FileSize_MB_Short;
                 case SizeRange.Kb:
-                    rangeName = longString ? Localisation.FileSize_KB_Long : Localisation.FileSize_KB_Short;
-                    break;
+                    return longString ? Localisation.FileSize_KB_Long : Localisation.FileSize_KB_Short;
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(range), range, "Unknown range");
             }
-
-            return rangeName;
         }
-
-
         public XmlSchema GetSchema() { return null; }
 
         public void ReadXml(XmlReader reader)

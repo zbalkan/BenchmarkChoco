@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BenchmarkChoco
 {
@@ -83,11 +82,26 @@ namespace BenchmarkChoco
             return d[n, m];
         }
 
-        public static IEnumerable<char> InvalidFileNameChars => Path.GetInvalidFileNameChars();
+        public static IEnumerable<char> InvalidFileNameChars
+        {
+            get {
+                return Path.GetInvalidFileNameChars();
+            }
+        }
 
-        public static IEnumerable<char> InvalidPathChars => Path.GetInvalidPathChars();
+        public static IEnumerable<char> InvalidPathChars
+        {
+            get {
+                return Path.GetInvalidPathChars();
+            }
+        }
 
-        public static IEnumerable<string> NewLineChars => new[] { Environment.NewLine, "\n", "\r" };
+        public static IEnumerable<string> NewLineChars
+        {
+            get {
+                return new[] { Environment.NewLine, "\n", "\r" };
+            }
+        }
 
         /// <summary>
         ///     Get a unique name based on the supplied baseName. If baseName is found in the otherItems enumerable it is postfixed
@@ -120,7 +134,7 @@ namespace BenchmarkChoco
                 if (!otherItemList.Contains(baseNameCounted.ToLower()))
                     return baseNameCounted;
             }
-            throw new ArgumentOutOfRangeException(nameof(otherItems), @"Unique name reached int.MaxValue");
+            throw new ArgumentOutOfRangeException(nameof(otherItems), "Unique name reached int.MaxValue");
         }
 
         public static bool StringContainsFilter(string input, string filter)
@@ -183,7 +197,7 @@ namespace BenchmarkChoco
             {
                 if (char.IsSurrogatePair(input, i))
                 {
-                    int c = char.ConvertToUtf32(input, i);
+                    var c = char.ConvertToUtf32(input, i);
                     i++;
                     if (IsValidCodePoint(c))
                         sb.Append(char.ConvertFromUtf32(c));
@@ -192,7 +206,7 @@ namespace BenchmarkChoco
                 }
                 else
                 {
-                    char c = input[i];
+                    var c = input[i];
                     if (IsValidCodePoint(c))
                         sb.Append(c);
                     else
@@ -204,7 +218,7 @@ namespace BenchmarkChoco
 
         private static bool IsValidCodePoint(int point)
         {
-            return point < 0xfdd0 || point >= 0xfdf0 && (point & 0xffff) != 0xffff && (point & 0xfffe) != 0xfffe && point <= 0x10ffff;
+            return point < 0xfdd0 || (point >= 0xfdf0 && (point & 0xffff) != 0xffff && (point & 0xfffe) != 0xfffe && point <= 0x10ffff);
         }
 
         public static string Replace(this string str, string oldValue, string newValue, StringComparison comparison)
@@ -215,14 +229,14 @@ namespace BenchmarkChoco
             var index = str.IndexOf(oldValue, comparison);
             while (index != -1)
             {
-                sb.Append(str.Substring(previousIndex, index - previousIndex));
+                sb.Append(str, previousIndex, index - previousIndex);
                 sb.Append(newValue);
                 index += oldValue.Length;
 
                 previousIndex = index;
                 index = str.IndexOf(oldValue, index, comparison);
             }
-            sb.Append(str.Substring(previousIndex));
+            sb.Append(str, previousIndex, str.Length - previousIndex);
 
             return sb.ToString();
         }

@@ -15,20 +15,103 @@ namespace BenchmarkChoco
 {
     public static class WindowsTools
     {
-        public static Version Windows10 => new Version(10, 0);
-        public static Version Windows8P1 => new Version(6, 3);
-        public static Version WindowsServer2012R2 => new Version(6, 3);
-        public static Version Windows8 => new Version(6, 2);
-        public static Version WindowsServer2012 => new Version(6, 2);
-        public static Version Windows7 => new Version(6, 1);
-        public static Version WindowsServer2008R2 => new Version(6, 1);
-        public static Version WindowsServer2008 => new Version(6, 0);
-        public static Version WindowsVista => new Version(6, 0);
-        public static Version WindowsServer2003R2 => new Version(5, 2);
-        public static Version WindowsServer2003 => new Version(5, 2);
-        public static Version WindowsXp64 => new Version(5, 2);
-        public static Version WindowsXp => new Version(5, 1);
-        public static Version Windows2000 => new Version(5, 0);
+        public static Version Windows10
+        {
+            get {
+                return new Version(10, 0);
+            }
+        }
+
+        public static Version Windows8P1
+        {
+            get {
+                return new Version(6, 3);
+            }
+        }
+
+        public static Version WindowsServer2012R2
+        {
+            get {
+                return new Version(6, 3);
+            }
+        }
+
+        public static Version Windows8
+        {
+            get {
+                return new Version(6, 2);
+            }
+        }
+
+        public static Version WindowsServer2012
+        {
+            get {
+                return new Version(6, 2);
+            }
+        }
+
+        public static Version Windows7
+        {
+            get {
+                return new Version(6, 1);
+            }
+        }
+
+        public static Version WindowsServer2008R2
+        {
+            get {
+                return new Version(6, 1);
+            }
+        }
+
+        public static Version WindowsServer2008
+        {
+            get {
+                return new Version(6, 0);
+            }
+        }
+
+        public static Version WindowsVista
+        {
+            get {
+                return new Version(6, 0);
+            }
+        }
+
+        public static Version WindowsServer2003R2
+        {
+            get {
+                return new Version(5, 2);
+            }
+        }
+
+        public static Version WindowsServer2003
+        {
+            get {
+                return new Version(5, 2);
+            }
+        }
+
+        public static Version WindowsXp64
+        {
+            get {
+                return new Version(5, 2);
+            }
+        }
+
+        public static Version WindowsXp
+        {
+            get {
+                return new Version(5, 1);
+            }
+        }
+
+        public static Version Windows2000
+        {
+            get {
+                return new Version(5, 0);
+            }
+        }
 
         /// <summary>
         /// Check if .NET Framework v4 is available. Returns null if not installed, or highest installed version.
@@ -247,7 +330,12 @@ namespace BenchmarkChoco
         };
 
         private static long _uniqueUserId;
-        public static string DefaultValueName => string.Empty;
+        public static string DefaultValueName
+        {
+            get {
+                return string.Empty;
+            }
+        }
 
         public static string GetEnvironmentPath(CSIDL target)
         {
@@ -371,14 +459,18 @@ namespace BenchmarkChoco
 
             if (includeLibraries &&
                 LibraryTypes.Any(x => filename.EndsWith(x, StringComparison.CurrentCultureIgnoreCase)))
+            {
                 return true;
+            }
 
             if (SystemExecutableTypes.Any(x => filename.EndsWith(x, StringComparison.CurrentCultureIgnoreCase)))
                 return true;
 
             if (!onlySystemTypes &&
                 ThirdPartyExecutableTypes.Any(x => filename.EndsWith(x, StringComparison.CurrentCultureIgnoreCase)))
+            {
                 return true;
+            }
 
             return false;
         }
@@ -414,7 +506,9 @@ namespace BenchmarkChoco
                 if ((ni.OperationalStatus != OperationalStatus.Up) ||
                     (ni.NetworkInterfaceType == NetworkInterfaceType.Loopback) ||
                     (ni.NetworkInterfaceType == NetworkInterfaceType.Tunnel))
+                {
                     continue;
+                }
 
                 // this allow to filter modems, serial, etc.
                 if (ni.Speed < minimumSpeed)
@@ -423,7 +517,9 @@ namespace BenchmarkChoco
                 // discard virtual cards (virtual box, virtual pc, etc.)
                 if ((ni.Description.Contains("virtual", StringComparison.OrdinalIgnoreCase)) ||
                     (ni.Name.Contains("virtual", StringComparison.OrdinalIgnoreCase)))
+                {
                     continue;
+                }
 
                 // discard "Microsoft Loopback Adapter", it will not show as NetworkInterfaceType.Loopback but as Ethernet Card.
                 if (ni.Description.Equals("Microsoft Loopback Adapter", StringComparison.OrdinalIgnoreCase))
@@ -450,6 +546,9 @@ namespace BenchmarkChoco
             }
         }
 
+        /// <summary>
+        ///     Open Explorer on the said path.
+        /// </summary>
         /// <exception cref="ArgumentNullException">The value of 'objectPath' cannot be null. </exception>
         /// <exception cref="IOException">Failed to start explorer. </exception>
         public static void OpenExplorerFocusedOnObject(string objectPath)
@@ -584,6 +683,7 @@ namespace BenchmarkChoco
             */
 
             [Flags]
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "RCS1135:Declare enum member with zero value (when enum has FlagsAttribute).", Justification = "<Pending>")]
             internal enum SLGP_FLAGS
             {
                 /// <summary>Retrieves the standard short (8.3 format) file name</summary>
@@ -617,6 +717,7 @@ namespace BenchmarkChoco
             }
 
             [Flags]
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "RCS1135:Declare enum member with zero value (when enum has FlagsAttribute).", Justification = "<Pending>")]
             internal enum SLR_FLAGS
             {
                 /// <summary>

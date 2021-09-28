@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Microsoft.Win32;
 
 namespace BenchmarkChoco
@@ -43,7 +40,7 @@ namespace BenchmarkChoco
         }
 
         /// <summary>
-        /// Get the specified value as a string. If the value is a string, then it is trimmed up until the 
+        /// Get the specified value as a string. If the value is a string, then it is trimmed up until the
         /// first null character to avoid buggy GetValue returning data after the end of string.
         /// </summary>
         public static string GetStringSafe(this RegistryKey key, string valueName)
