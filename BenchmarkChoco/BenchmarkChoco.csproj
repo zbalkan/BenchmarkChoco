@@ -290,7 +290,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChocolateyExtensions.cs" />
     <Compile Include="NewApproach\ChocolateyFactoryWithLib.cs" />
     <Compile Include="OriginalBCUSource\ApplicationEntryTools.cs" />
     <Compile Include="OriginalBCUSource\ApplicationUninstallerEntry.cs" />
@@ -327,7 +326,6 @@
     <Compile Include="OriginalBCUSource\CollectionExtensions.cs" />
     <Compile Include="OriginalBCUSource\ListGenerationProgress.cs" />
     <Compile Include="OriginalBCUSource\PathTools.cs" />
-    <Compile Include="Package.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OriginalBCUSource\RegistryKeyExtensions.cs" />
