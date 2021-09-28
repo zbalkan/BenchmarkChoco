@@ -70,8 +70,14 @@ namespace BenchmarkChoco
                     config.CommandName = nameof(CommandNameType.list);
                     config.ListCommand.LocalOnly = true;
                 });
-            foreach (var package in _choco.List<PackageResult>())
+            var sw = Stopwatch.StartNew();
+            var packages = _choco.List<PackageResult>();
+            Console.WriteLine($"[Performance] Retrieving package list took {sw.ElapsedMilliseconds}ms");
+            sw.Stop();
+
+            foreach (var package in packages)
             {
+                sw.Restart();
                 var entry = new ApplicationUninstallerEntry
                 {
                     // Info in the package result
@@ -105,6 +111,7 @@ namespace BenchmarkChoco
                 entry.AdditionalJunk.Add(junk);
 
                 results.Add(entry);
+                Console.WriteLine($"[Performance] Mapping PackageResult to Application entry for {package.Name} took {sw.ElapsedMilliseconds}ms");
             }
             return results;
         }
