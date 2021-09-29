@@ -81,12 +81,12 @@ namespace BenchmarkChoco
                 var entry = new ApplicationUninstallerEntry
                 {
                     // Info in the package result
-                    DisplayName = package.Name,
                     DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(package.Version),
                     InstallLocation = package.InstallLocation,
                     InstallSource = package.Source,
 
                     // Info in the nested IPackage
+                    DisplayName = package.Package.Title,
                     AboutUrl = package.Package.ProjectUrl?.AbsolutePath ?? package.Package.DocsUrl?.AbsolutePath,
                     Comment = package.Package.Description ?? package.Package.Tags,
 
