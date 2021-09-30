@@ -12,20 +12,9 @@ namespace BenchmarkChoco
 {
     public sealed class ChocolateyFactoryWithLib
     {
-        private readonly GetChocolatey _choco;
-
-        private static bool? chocoIsAvailable = null;
-
+        private GetChocolatey choco;
+        private static bool? chocoIsAvailable;
         private static string chocoFullFilename;
-
-        public ChocolateyFactoryWithLib()
-        {
-            GatherInfo();
-            if (chocoIsAvailable.Value)
-            {
-                _choco = Lets.GetChocolatey();
-            }
-        }
 
         [SuppressMessage("Redundancy", "RCS1163:Unused parameter.", Justification = "Callback is used with the result, not in the method itself.")]
         [SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Callback is used with the result, not in the method itself.")]
@@ -33,58 +22,67 @@ namespace BenchmarkChoco
         public IList<ApplicationUninstallerEntry> GetUninstallerEntries(ListGenerationProgress.ListGenerationCallback progressCallback = null)
         {
             var results = new List<ApplicationUninstallerEntry>();
-            if (!chocoIsAvailable.Value) return results;
-
-            _choco.Set(
+            if (!IsChocoAvailable()) return results;
+            choco = Lets.GetChocolatey();
+            choco.Set(
                 config =>
                 {
                     config.CommandName = nameof(CommandNameType.list);
                     config.ListCommand.LocalOnly = true;
                 });
             var sw = Stopwatch.StartNew();
-            var packages = _choco.List<PackageResult>();
+            var packages = choco.List<PackageResult>();
             Console.WriteLine($"[Performance] Retrieving package list took {sw.ElapsedMilliseconds}ms");
-            sw.Stop();
+            sw.Restart();
+            packages.AsParallel().AsOrdered().ForEach(package => results.Add(ConvertToEntry(package)));
+            Console.WriteLine($"[Performance] PARALLEL: Mapping PackageResult to Application for entry took {sw.ElapsedMilliseconds}ms");
 
-            foreach (var package in packages)
-            {
-                sw.Restart();
-                var entry = new ApplicationUninstallerEntry();
-                entry.DisplayName = SanitizeString(package.Package.Title);
-                entry.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(package.Version);
-                entry.Comment = SanitizeString(package.Package.Summary ?? package.Package.Description.Split('\n')[0] ?? package.Package.Tags);
-                entry.AboutUrl = package.Package.DocsUrl?.AbsoluteUri ?? package.Package.ProjectUrl?.AbsoluteUri;
-                entry.InstallLocation = package.InstallLocation;
-                entry.DisplayIcon = string.Empty;
-                entry.EstimatedSize = FileSize.Empty;
-                entry.IconBitmap = null;
-                entry.InstallDate = DateTime.MinValue;
-                entry.RatingId = $"Choco {package.Package.Id}";
-                entry.UninstallerKind = UninstallerType.Chocolatey;
-
-                // A special occasion that needs to be handled.
-                if (package.Package.Title.Equals("Chocolatey"))
-                {
-                    entry.InstallLocation = Environment.GetEnvironmentVariable("ChocolateyInstall");
-                }
-
-                var psc = new ProcessStartCommand(chocoFullFilename, $"uninstall {package.Package.Id} -y -r");
-                entry.UninstallString = psc.ToString();
-
-                // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
-                psc.Arguments += " -n --skipautouninstaller";
-                var junk = new RunProcessJunk(entry, null, psc, Localisation.ChocolateyFactory_UninstallInChocolateyJunkName);
-                junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
-                junk.Confidence.Add(4);
-                entry.AdditionalJunk.Add(junk);
-
-                results.Add(entry);
-                Console.WriteLine($"[Performance] Mapping PackageResult to Application entry for {package.Package.Id} took {sw.ElapsedMilliseconds}ms");
-            }
             return results;
         }
 
-        private void GatherInfo()
+        private ApplicationUninstallerEntry ConvertToEntry(PackageResult package)
+        {
+            var entry = new ApplicationUninstallerEntry();
+            entry.DisplayName = SanitizeString(package.Package.Title);
+            entry.DisplayVersion = ApplicationEntryTools.CleanupDisplayVersion(package.Version);
+            entry.Comment = SanitizeString(package.Package.Summary ?? package.Package.Description.Split('\n')[0] ?? package.Package.Tags);
+            entry.AboutUrl = package.Package.DocsUrl?.AbsoluteUri ?? package.Package.ProjectUrl?.AbsoluteUri;
+            entry.InstallLocation = package.InstallLocation;
+            entry.DisplayIcon = string.Empty;
+            entry.EstimatedSize = FileSize.Empty;
+            entry.IconBitmap = null;
+            entry.InstallDate = DateTime.MinValue;
+            entry.RatingId = $"Choco {package.Package.Id}";
+            entry.UninstallerKind = UninstallerType.Chocolatey;
+
+            // A special occasion that needs to be handled.
+            if (package.Package.Title.Equals("Chocolatey"))
+            {
+                entry.InstallLocation = Environment.GetEnvironmentVariable("ChocolateyInstall");
+            }
+
+            var psc = new ProcessStartCommand(chocoFullFilename, $"uninstall {package.Package.Id} -y -r");
+            entry.UninstallString = psc.ToString();
+
+            // Prevent chocolatey from trying to run the original uninstaller (it's deleted by now), only remove the package
+            psc.Arguments += " -n --skipautouninstaller";
+            var junk = new RunProcessJunk(entry, null, psc, Localisation.ChocolateyFactory_UninstallInChocolateyJunkName);
+            junk.Confidence.Add(ConfidenceRecords.ExplicitConnection);
+            junk.Confidence.Add(4);
+            entry.AdditionalJunk.Add(junk);
+            return entry;
+        }
+
+        private static bool IsChocoAvailable()
+        {
+            if (!chocoIsAvailable.HasValue)
+            {
+                GetChocoInfo();
+            }
+
+            return chocoIsAvailable.Value;
+        }
+        private static void GetChocoInfo()
         {
             var chocoPath = string.Empty;
             if (string.IsNullOrWhiteSpace(chocoFullFilename))
