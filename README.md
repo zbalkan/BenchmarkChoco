@@ -6,7 +6,21 @@ The overhead of creating a new process for every query is hugeThere are better o
 2. Use Chocolatey's own `chocolatey.lib` library to extract thr list of applications. Tests show significant performance gain and the amount of gain seems suspicious. There's a need for checking loss off data. Also it adds two dependencies: `chocolatey.lib` and it's unused dependency `log4net`.
 
 ## Summary
-Test results show significant (about 400 times faster) performance improvement. However, there might be a difference in the information provided by each query. I will add a unit teast to check the integrity of the information provided by each methods.
+Test results show significant (about 500 times faster) performance improvement. With unit tests, it's ensured that there is not a difference in the outputs. Also, this numbers include console output times. Considering the speed of the actual data extraction, it would probably take less time to use `Debug.Write` instead of `Console.WriteLine` in actual use. But in test, I used `Console.WriteLine` for a fair comparison. Actual PR will include only `Debug.Write`
+
+## TO-DO
+It's possible to use `ListAsync()` method instead of `List()` by wrapping it in a `Task`, however it would not affect the overall performance significantly.
+
+## Tests
+The solution includes 2 projects:
+1. **BenchmarkChoco:** Uses BenchmarkDotNet to compare results of two different methods. To disable the effects of a cold start, 5 warmup iterations were added. Afterwards 100 iterations were run. It takes hours so it is advised to start small at first.
+2. **BenchmarkChoco.Tests:** Simple unit tests to ensure the results of the methods are the same.
+
+## Run the tests
+1. Clone the repository.
+2. Open the solution in Visual Studio.
+3. Select Release mode and start (required by BenchmarkDotNet).
+4. For unit tests, just go to the test class and run all tests.
 
 ### Benchmark 1
 ``` ini
@@ -15,7 +29,8 @@ AMD A10-9600P RADEON R5, 10 COMPUTE CORES 4C+6G, 1 CPU, 4 logical and 4 physical
   [Host]     : .NET Framework 4.8 (4.8.4400.0), X86 LegacyJIT
   Job-TABFKX : .NET Framework 4.8 (4.8.4400.0), X86 LegacyJIT
   
-IterationCount=20  LaunchCount=1  RunStrategy=Monitoring WarmupCount=1  
+IterationCount=20  LaunchCount=1  RunStrategy=Monitoring
+WarmupCount=1  
 ```
 |                          Method |         Mean |        Error |      StdDev |
 |-------------------------------- |-------------:|-------------:|------------:|
@@ -39,3 +54,20 @@ WarmupCount=5
 |-------------------------------- |-------------:|----------:|------------:|
 | ParsingExecutableOutputStrategy | 331,028.4 ms | 816.17 ms | 2,406.48 ms |
 |            UsingLibraryStrategy |     692.6 ms |  20.90 ms |    61.64 ms |
+
+### Benchmark 3
+``` ini
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.18363.1801 (1909/November2019Update/19H2)
+AMD A10-9600P RADEON R5, 10 COMPUTE CORES 4C+6G, 1 CPU, 4 logical and 4 physical cores
+  [Host]     : .NET Framework 4.8 (4.8.4400.0), X86 LegacyJIT  [AttachedDebugger]
+  Job-IUGHYI : .NET Framework 4.8 (4.8.4400.0), X86 LegacyJIT
+
+IterationCount=100  LaunchCount=1  RunStrategy=Monitoring  
+WarmupCount=5  
+
+```
+|                          Method |         Mean |       Error |       StdDev |
+|-------------------------------- |-------------:|------------:|-------------:|
+| ParsingExecutableOutputStrategy | 349,816.4 ms | 3,934.71 ms | 11,601.57 ms |
+|            UsingLibraryStrategy |     680.6 ms |    33.53 ms |     98.86 ms |
