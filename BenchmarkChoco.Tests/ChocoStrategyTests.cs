@@ -12,35 +12,30 @@ namespace BenchmarkChoco.Tests
         [TestInitialize]
         public void Initialize()
         {
-            var originalFactory = new ChocolateyFactory();
-            var suggestedFactory = new ChocolateyFactoryWithLib();
-
-            ExpectedEntries = (List<ApplicationUninstallerEntry>) originalFactory.GetUninstallerEntries(null);
-
-            ActualEntries = (List<ApplicationUninstallerEntry>) suggestedFactory.GetUninstallerEntries(null);
+            ExpectedEntries = (List<ApplicationUninstallerEntry>) new ChocolateyFactory().GetUninstallerEntries(null);
+            ActualEntries = (List<ApplicationUninstallerEntry>) new ChocolateyFactoryWithLib().GetUninstallerEntries(null);
         }
 
         [TestMethod]
-        public void MethodsReturnTheSameNumberOfPackages()
+        public void Test1_MethodsReturnTheSameNumberOfPackages()
         {
             Assert.AreEqual(ExpectedEntries.Count, ActualEntries.Count);
         }
 
         [TestMethod]
-        public void MethodsReturnTheSameEntriesGivenOne()
+        public void Test2_MethodsReturnTheSameEntriesGivenOne()
         {
             Assert.IsTrue(Equals(ExpectedEntries[0], ActualEntries[0]));
         }
 
         [TestMethod]
-        public void MethodsReturnTheSameEntriesGivenAll()
+        public void Test3_MethodsReturnTheSameEntriesGivenAll()
         {
             for (var i = 0; i < ExpectedEntries.Count; i++)
             {
                 Assert.IsTrue(Equals(ExpectedEntries[i], ActualEntries[i]));
             }
         }
-
         private static bool Equals(ApplicationUninstallerEntry entry1, ApplicationUninstallerEntry entry2)
         {
             if (entry1.DisplayName != entry2.DisplayName) return false;
