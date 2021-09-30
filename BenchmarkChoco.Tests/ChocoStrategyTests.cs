@@ -9,7 +9,6 @@ namespace BenchmarkChoco.Tests
         public List<ApplicationUninstallerEntry> ExpectedEntries { get; set; }
         public List<ApplicationUninstallerEntry> ActualEntries { get; set; }
 
-
         [TestInitialize]
         public void Initialize()
         {
@@ -21,7 +20,6 @@ namespace BenchmarkChoco.Tests
             ActualEntries = (List<ApplicationUninstallerEntry>) suggestedFactory.GetUninstallerEntries(null);
         }
 
-
         [TestMethod]
         public void MethodsReturnTheSameNumberOfPackages()
         {
@@ -32,6 +30,15 @@ namespace BenchmarkChoco.Tests
         public void MethodsReturnTheSameEntriesGivenOne()
         {
             Assert.IsTrue(Equals(ExpectedEntries[0], ActualEntries[0]));
+        }
+
+        [TestMethod]
+        public void MethodsReturnTheSameEntriesGivenAll()
+        {
+            for (var i = 0; i < ExpectedEntries.Count; i++)
+            {
+                Assert.IsTrue(Equals(ExpectedEntries[i], ActualEntries[i]));
+            }
         }
 
         private static bool Equals(ApplicationUninstallerEntry entry1, ApplicationUninstallerEntry entry2)
@@ -65,7 +72,7 @@ namespace BenchmarkChoco.Tests
             if (entry1.SystemComponent != entry2.SystemComponent) return false;
             if (entry1.UninstallerFullFilename != entry2.UninstallerFullFilename) return false;
             if (entry1.UninstallerKind != entry2.UninstallerKind) return false;
-            if (entry1.UninstallPossible  != entry2.UninstallPossible) return false;
+            if (entry1.UninstallPossible != entry2.UninstallPossible) return false;
             if (entry1.UninstallString != entry2.UninstallString) return false;
             if (entry1.ToLongString() != entry2.ToLongString()) return false;
             if (entry1.ToString() != entry2.ToString()) return false;
