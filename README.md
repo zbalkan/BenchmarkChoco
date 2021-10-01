@@ -6,10 +6,10 @@ The overhead of creating a new process for every query is hugeThere are better o
 2. Use Chocolatey's own `chocolatey.lib` library to extract thr list of applications. Tests show significant performance gain and the amount of gain seems suspicious. There's a need for checking loss off data. Also it adds two dependencies: `chocolatey.lib` and it's unused dependency `log4net`.
 
 ## Summary
-Test results show significant (about 500 times faster) performance improvement. With unit tests, it's ensured that there is not a difference in the outputs. Also, this numbers include console output times. Considering the speed of the actual data extraction, it would probably take less time to use `Debug.Write` instead of `Console.WriteLine` in actual use. But in test, I used `Console.WriteLine` for a fair comparison. Actual PR will include only `Debug.Write`
+Test results show significant (about 600 times faster) performance improvement. With unit tests, it's ensured that there is not a difference in the outputs. Also, this numbers include console output times. Considering the speed of the actual data extraction, it would probably take less time to use `Debug.Write` instead of `Console.WriteLine` in actual use. But in test, I used `Console.WriteLine` for a fair comparison. Actual PR will probably include only `Debug.Write`
 
 ## TO-DO
-It's possible to use `ListAsync()` method instead of `List()` by wrapping it in a `Task`, however it would not affect the overall performance significantly.
+[x] Use parallel (`PLINQ` or `Parallel.ForEach`)
 
 ## Tests
 The solution includes 2 projects:
@@ -71,3 +71,20 @@ WarmupCount=5
 |-------------------------------- |-------------:|------------:|-------------:|
 | ParsingExecutableOutputStrategy | 349,816.4 ms | 3,934.71 ms | 11,601.57 ms |
 |            UsingLibraryStrategy |     680.6 ms |    33.53 ms |     98.86 ms |
+
+### Benchmark 4
+``` ini
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.18363.1801 (1909/November2019Update/19H2)
+AMD A10-9600P RADEON R5, 10 COMPUTE CORES 4C+6G, 1 CPU, 4 logical and 4 physical cores
+  [Host]     : .NET Framework 4.8 (4.8.4400.0), X64 RyuJIT  [AttachedDebugger]
+  Job-AJPCRR : .NET Framework 4.8 (4.8.4400.0), X64 RyuJIT
+
+IterationCount=100  LaunchCount=1  RunStrategy=Monitoring  
+WarmupCount=5  
+
+```
+|                          Method |         Mean |        Error |       StdDev |       Median |
+|-------------------------------- |-------------:|-------------:|-------------:|-------------:|
+| ParsingExecutableOutputStrategy | 373,823.1 ms | 17,892.15 ms | 52,755.42 ms | 350,595.3 ms |
+|            UsingLibraryStrategy |     557.4 ms |     32.48 ms |     95.76 ms |     588.8 ms |
