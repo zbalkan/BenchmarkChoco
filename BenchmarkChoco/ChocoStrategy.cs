@@ -20,5 +20,12 @@ namespace BenchmarkChoco
             var choco = new ChocolateyFactoryWithLib();
             choco.GetUninstallerEntries(r => Console.WriteLine(r.Message));
         }
+
+        [Benchmark]
+        public void ParsingSingleStrategy()
+        {
+            var choco = new ChocolateyFactoryParsingSingle();
+            choco.GetUninstallerEntries(r => Console.WriteLine(r.Message));
+        }
     }
 }
